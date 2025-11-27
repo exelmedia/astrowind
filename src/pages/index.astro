@@ -13,7 +13,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Automatyzacja procesów biznesowych, marketingowych i e-commerce | Uczciwe SEO',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,78 +25,76 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
+        text: 'Sprawdź uczciweseo.pl',
+        href: 'https://uczciweseo.pl',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:arrow-right',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Dowiedz się więcej', href: '#features' },
     ]}
     image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro 5.0</span> + Tailwind CSS
+      Automatyzacja procesów <span class="hidden xl:inline">biznesowych,</span>
+      <span class="text-accent dark:text-white"> marketingowych</span> i e-commerce
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
+        <span class="font-semibold">Automatyzacja to nie przyszłość – to teraźniejszość</span>, która decyduje o sukcesie na rynku.</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Automatyzacja dla Twojego biznesu</span>
+      Dostosowujemy rozwiązania automatyzacji biznesu do indywidualnych potrzeb małych, średnich i dużych firm, niezależnie od branży.
     </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
 
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
+  <Note title="Nasza filozofia:" description="Uczciwa współpraca WIN-WIN bez długofalowych zobowiązań" />
 
   <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
+    tagline="Nasze rozwiązania"
+    title="Co oferujemy w zakresie automatyzacji"
+    subtitle="Kompleksowe rozwiązania automatyzacji dostosowane do potrzeb Twojego biznesu. 16 lat doświadczenia na rynku marketingu internetowego."
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Automatyzacja e-commerce',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          'Automatyzacja procesów w sklepach internetowych, integracje z Allegro, aktualizacja stanów magazynowych i czasów dostawy, wystawianie plików XML.',
+        icon: 'tabler:shopping-cart',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'Integracja systemów ERP',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+          'Automatyzacja procesów e-commerce w systemach takich jak COMARCH OPTIMA. Synchronizacja danych między systemami.',
+        icon: 'tabler:refresh',
       },
       {
-        title: 'Best Practices',
+        title: 'Przetwarzanie dokumentów (OCR)',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+          'Automatyzacja rozpoznawania skanów, PDF i obrazów. Ekstrakcja danych z dokumentów i ich automatyczne przetwarzanie.',
+        icon: 'tabler:scan',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Web scraping i pozyskiwanie danych',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+          'Masowe pobieranie danych z dowolnego źródła w Internecie. Budowanie baz danych do wykorzystania w marketingu.',
+        icon: 'tabler:database-import',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Email marketing automation',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+          'Automatyzacja kampanii e-mail marketingowych, budowanie baz kontaktów, personalizacja komunikacji z klientami.',
+        icon: 'tabler:mail',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: 'Oszczędność czasu i kosztów',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+          'Zwiększenie efektywności, redukcja błędów ludzkich, automatyzacja powtarzalnych zadań. Więcej czasu na rozwój biznesu.',
+        icon: 'tabler:clock-dollar',
       },
     ]}
   />
@@ -105,33 +103,33 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline="Narzędzia automatyzacji"
+    title="Pracujemy z najlepszymi platformami"
     items={[
       {
-        title: 'Built on top of Astro 5.0',
+        title: 'Make (Integromat)',
         description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          'Zaawansowana platforma no-code do tworzenia automatyzacji i integracji między tysiącami aplikacji biznesowych.',
       },
       {
-        title: 'Styled using Tailwind CSS',
+        title: 'n8n',
         description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+          'Open-source narzędzie do automatyzacji workflow z pełną kontrolą nad danymi i procesami biznesowymi.',
       },
       {
-        title: 'Cross-browser compatibility',
+        title: 'Zapier',
         description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+          'Popularna platforma integracyjna umożliwiająca łączenie aplikacji i automatyzację powtarzalnych zadań.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Narzędzia automatyzacji',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Certyfikowany Partner Google</h3>
+      16 lat doświadczenia w automatyzacji procesów biznesowych i marketingu internetowego
     </Fragment>
 
     <Fragment slot="bg">
@@ -145,31 +143,31 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
+        title: 'E-commerce i marketplace',
+        description: `Automatyzacja procesów sprzedażowych na Allegro, aktualizacja stanów magazynowych, synchronizacja z systemami ERP jak COMARCH OPTIMA.`,
       },
       {
-        title: 'Multiple layout possibilities',
+        title: 'Integracje z systemami',
         description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+          'Łączymy różne systemy biznesowe - sklepy internetowe, CRM, ERP, narzędzia marketingowe. Wszystko działa razem.',
       },
       {
-        title: 'Fully responsive design',
+        title: 'Automatyzacja danych produktowych',
         description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+          'Wystawianie plików XML, aktualizacja opisów produktów, zarządzanie danymi w sklepach internetowych bez ręcznej pracy.',
       },
       {
-        title: 'Integration of media',
+        title: 'Przetwarzanie dokumentów',
         description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+          'OCR i automatyczne rozpoznawanie treści ze skanów, PDF-ów i obrazów. Ekstrakcja danych bez przepisywania.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80',
+      alt: 'E-commerce automation',
     }}
   >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+    <Fragment slot="content">Kompleksowa automatyzacja dla Twojego biznesu e-commerce</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -183,31 +181,31 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Enhanced user engagement',
+        title: 'Zwiększenie efektywności',
         description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
+          'Automatyzacja powtarzalnych zadań pozwala zespołowi skupić się na strategicznych działaniach, które naprawdę rozwijają biznes.',
       },
       {
-        title: 'Continuous improvement',
+        title: 'Redukcja błędów ludzkich',
         description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
+          'Zautomatyzowane procesy eliminują ryzyko pomyłek wynikających z ręcznego wprowadzania danych i wykonywania zadań.',
       },
       {
-        title: 'Time and resource efficiency',
+        title: 'Oszczędność czasu i pieniędzy',
         description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
+          'Mniej czasu na rutynowe zadania to więcej zasobów na rozwój. Automatyzacja zwraca się w krótkim czasie.',
       },
       {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
+        title: 'Współpraca na zasadzie WIN-WIN',
+        description: `Uczciwe zasady współpracy bez długofalowych zobowiązań. Każdy projekt wyceniany indywidualnie według rynkowych stawek.`,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      src: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Korzyści automatyzacji',
     }}
   >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+    <Fragment slot="content">Twój biznes zasługuje na najlepsze rozwiązania</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -217,93 +215,95 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title="Jak wygląda proces wdrożenia automatyzacji?"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
+        title: 'Krok 1: <span class="font-medium">Analiza potrzeb</span>',
         description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
+          'Rozmawiamy o Twoich procesach biznesowych, identyfikujemy obszary do automatyzacji i wspólnie określamy cele projektu. Poznajemy specyfikę Twojej firmy.',
+        icon: 'tabler:search',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
+        title: 'Krok 2: <span class="font-medium">Wycena i propozycja</span>',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
+          'Przygotowujemy szczegółową ofertę z zakresem prac, harmonogramem i kosztami. Każdy projekt wyceniany jest indywidualnie według uczciwych zasad rynkowych.',
+        icon: 'tabler:file-invoice',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'Krok 3: <span class="font-medium">Wdrożenie</span>',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
+          'Budujemy i testujemy automatyzację. Integrujemy systemy, konfigurujemy połączenia i zapewniamy, że wszystko działa płynnie.',
+        icon: 'tabler:settings',
       },
       {
-        title: 'Ready!',
+        title: 'Gotowe!',
+        description:
+          'Twoje procesy są zautomatyzowane. Oszczędzasz czas, redukujesz błędy i możesz skupić się na rozwoju biznesu.',
         icon: 'tabler:check',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Proces wdrożenia automatyzacji',
     }}
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
+    title="Przykłady zastosowań automatyzacji"
+    subtitle="Zobacz, jakie procesy możemy zautomatyzować w Twojej firmie"
+    tagline="Zastosowania"
     items={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
+        title: 'Sklepy internetowe',
+        description: 'Automatyczna aktualizacja stanów magazynowych, synchronizacja cen, generowanie plików XML dla porównywarek cenowych.',
+        icon: 'tabler:shopping-cart',
       },
       {
-        title: 'Heros',
+        title: 'Allegro & Marketplace',
         description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
+          'Automatyzacja wystawiania ofert, aktualizacja czasów dostawy, synchronizacja z magazynem, zarządzanie zamówieniami.',
+        icon: 'tabler:packages',
       },
       {
-        title: 'Features',
+        title: 'Systemy ERP',
         description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
+          'Integracja z COMARCH OPTIMA i innymi systemami ERP. Automatyczny przepływ danych między systemami.',
+        icon: 'tabler:database',
       },
       {
-        title: 'Content',
+        title: 'Email Marketing',
         description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
+          'Automatyzacja kampanii mailingowych, segmentacja klientów, personalizacja wiadomości, budowanie baz kontaktów.',
+        icon: 'tabler:mail',
       },
       {
-        title: 'Call-to-Action',
+        title: 'Przetwarzanie dokumentów',
         description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
+          'OCR - automatyczne rozpoznawanie tekstu ze skanów i zdjęć, ekstrakcja danych z faktur, umów, dokumentów.',
+        icon: 'tabler:file-text',
       },
       {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
+        title: 'Web Scraping',
+        description: 'Masowe pobieranie danych z internetu, monitoring konkurencji, budowanie baz danych kontaktowych.',
+        icon: 'tabler:world-download',
       },
       {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
+        title: 'Social Media',
+        description: 'Automatyczne publikowanie postów, zbieranie danych analitycznych, monitoring mediów społecznościowych.',
+        icon: 'tabler:brand-facebook',
       },
       {
-        title: 'Contact',
+        title: 'CRM i obsługa klienta',
         description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
+          'Automatyzacja obsługi zgłoszeń, powiadomienia, aktualizacja danych klientów, generowanie raportów.',
+        icon: 'tabler:users',
       },
       {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
+        title: 'Raporty i analityka',
+        description: 'Automatyczne generowanie raportów sprzedażowych, finansowych, marketingowych z różnych źródeł danych.',
+        icon: 'tabler:chart-bar',
       },
     ]}
   >
@@ -315,50 +315,50 @@ const metadata = {
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
+    title="Więcej o automatyzacji na naszym blogu"
+    information={`Czytaj nasze artykuły o automatyzacji procesów biznesowych, marketingowych i e-commerce.
+                        Dzielimy się wiedzą, najlepszymi praktykami i studiami przypadków z wdrożeń.
+                        Dowiedz się, jak automatyzacja może zmienić Twój biznes.
                 `}
   />
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
+    title="Najczęściej zadawane pytania"
+    subtitle="Odpowiedzi na pytania dotyczące automatyzacji procesów biznesowych i naszej współpracy."
+    tagline="FAQ"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: 'Dla jakich firm jest automatyzacja?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          'Automatyzacja jest dla każdego - od małych firm przez średnie przedsiębiorstwa po duże korporacje. Niezależnie od branży, jeśli wykonujesz powtarzalne zadania, możemy je zautomatyzować i zaoszczędzić Twój czas.',
       },
       {
-        title: 'What do I need to start?',
+        title: 'Ile kosztuje wdrożenie automatyzacji?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          'Każdy projekt wyceniamy indywidualnie, w zależności od skomplikowania procesów i zakresu prac. Po analizie Twoich potrzeb przedstawiamy szczegółową ofertę. Pracujemy na uczciwych zasadach rynkowych bez ukrytych kosztów.',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'Jak długo trwa wdrożenie?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          'Czas wdrożenia zależy od złożoności projektu. Proste automatyzacje możemy uruchomić w ciągu kilku dni, bardziej zaawansowane integracje mogą wymagać kilku tygodni. Zawsze ustalamy realny harmonogram na początku współpracy.',
       },
       {
-        title: "What's something that you don't understand?",
+        title: 'Czy potrzebuję wiedzy technicznej?',
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+          'Nie! To my zajmujemy się całą stroną techniczną. Ty tylko opisujesz swoje procesy biznesowe, a my przekładamy je na działającą automatyzację. Po wdrożeniu wszystko działa samo.',
       },
       {
-        title: 'What is something that you would like to try again?',
+        title: 'Jakie systemy możecie zintegrować?',
         description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+          'Pracujemy z większością popularnych narzędzi - sklepy internetowe, systemy ERP (jak COMARCH OPTIMA), CRM, platformy marketplace (Allegro), narzędzia marketingowe i wiele innych. Jeśli coś ma API, możemy to zintegrować.',
       },
       {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        title: 'Czy są długoterminowe zobowiązania?',
         description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          'Nie! Pracujemy na zasadzie WIN-WIN bez długofalowych zobowiązań. Każdy projekt to osobna współpraca. Jeśli jesteś zadowolony z rezultatów, możesz zlecić kolejne projekty, ale nie ma żadnego przymusu.',
       },
     ]}
   />
@@ -367,10 +367,10 @@ const metadata = {
 
   <Stats
     stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { title: 'Lat doświadczenia', amount: '16' },
+      { title: 'Certyfikowany Partner', amount: 'Google' },
+      { title: 'Zadowolonych klientów', amount: '100+' },
+      { title: 'Zrealizowanych projektów', amount: '500+' },
     ]}
   />
 
@@ -380,20 +380,19 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
+        text: 'Sprawdź uczciweseo.pl',
+        href: 'https://uczciweseo.pl',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:arrow-right',
       },
     ]}
   >
     <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      Poznaj też uczciweseo.pl
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Chcesz zwiększyć widoczność swojego serwisu internetowego w wyszukiwarce Google i w agentach AI? <br class="hidden md:inline" />Skontaktuj się z nami
     </Fragment>
   </CallToAction>
 </Layout>
