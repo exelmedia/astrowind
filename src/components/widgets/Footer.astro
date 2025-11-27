@@ -1,7 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
+import logoLight from '~/assets/images/logo.svg';
+import logoDark from '~/assets/images/logo-negative.svg';
 
 interface Link {
   text?: string;
@@ -34,7 +37,26 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
+          <a class="inline-block" href={getHomePermalink()}>
+            <!-- Logo dla jasnego motywu (ukrywa się w dark mode) -->
+            <Image
+              src={logoLight}
+              alt={SITE?.name || 'UczciweIT'}
+              width={3000}
+              height={800}
+              class="h-20 md:h-24 w-auto dark:hidden"
+              loading="lazy"
+            />
+            <!-- Logo dla ciemnego motywu (ukrywa się w light mode) -->
+            <Image
+              src={logoDark}
+              alt={SITE?.name || 'UczciweIT'}
+              width={3000}
+              height={800}
+              class="h-20 md:h-24 w-auto hidden dark:block"
+              loading="lazy"
+            />
+          </a>
         </div>
         <div class="text-sm text-muted flex gap-1">
           {

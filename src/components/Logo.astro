@@ -1,9 +1,26 @@
 ---
 import { SITE } from 'astrowind:config';
+import { Image } from 'astro:assets';
+import logoLight from '~/assets/images/logo.svg';
+import logoDark from '~/assets/images/logo-negative.svg';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  🚀 {SITE?.name}
-</span>
+<!-- Logo dla jasnego motywu (ukrywa się w dark mode) -->
+<Image
+  src={logoLight}
+  alt={SITE?.name || 'UczciweIT'}
+  width={1800}
+  height={480}
+  class="h-20 md:h-24 w-auto dark:hidden"
+  loading="eager"
+/>
+
+<!-- Logo dla ciemnego motywu (ukrywa się w light mode) -->
+<Image
+  src={logoDark}
+  alt={SITE?.name || 'UczciweIT'}
+  width={1800}
+  height={480}
+  class="h-20 md:h-24 w-auto hidden dark:block"
+  loading="eager"
+/>

@@ -1,0 +1,213 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'O nas - UczciweIT',
+  description: 'Poznaj UczciweIT - agencję z 16-letnim doświadczeniem w automatyzacji procesów biznesowych, pozycjonowaniu SEO i Google Ads. Certyfikowany Partner Google. Uczciwa współpraca bez długoterminowych zobowiązań.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="O nas"
+    image={{
+      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'UczciweIT Team',
+    }}
+  >
+    <Fragment slot="title">
+      Marka to <span class="text-accent dark:text-white">obietnica</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Naszą misją jest pomóc Tobie w budowaniu widoczności biznesu w wyszukiwarkach i narzędziach AI.
+      <br /><br />
+      Z nami doświadczysz piękna uczciwego biznesu, a przy okazji otrzymasz wysokiej jakości usługi automatyzacji procesów biznesowych, pozycjonowania SEO i reklamy Google ADS.
+      <br /><br />
+      Dla nas kluczowe jest Twoje bezpieczeństwo biznesowe i zadowolenie z każdego aspektu usługi, począwszy od samych usług automatyzacji/SEO/ADS, a skończywszy na partnerskiej obsłudze na co dzień.
+      <br /><br />
+      Nie podpisujemy umów na lata, nie związujemy karami, czy innymi zabiegami, które rzutują na partnerską współpracę.
+      <br /><br />
+      <span class="font-semibold">Poczuj, jak możesz prowadzić współpracę biznesową na uczciwych zasadach.</span>
+    </Fragment>
+  </Hero>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Lat doświadczenia', amount: '16' },
+      { title: 'Partner', amount: 'Google' },
+      { title: 'Zadowolonych klientów', amount: '100+' },
+      { title: 'Zrealizowanych projektów', amount: '500+' },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Co nas wyróżnia?"
+    tagline="Nasze wartości"
+    columns={3}
+    items={[
+      {
+        title: 'Bezpieczeństwo biznesowe i prawne',
+        description:
+          'Umowa nie zawiera nieuczciwych zapisów, a wszystkie wybudowane zasoby po zakończeniu współpracy (w tym linki) pozostaną Twoją własnością.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Transparentność działań',
+        description:
+          'Każdy miesiąc działań podsumowujemy szczegółowym raportem, dzięki czemu masz stały wgląd w postępy i przebieg prac.',
+        icon: 'tabler:eye-check',
+      },
+      {
+        title: 'Bezpieczeństwo działań',
+        description:
+          'Działamy na sprawdzonej wiedzy SEO/ADS i wieloletnim doświadczeniu, w tym pozyskanym we własnym projekcie e-commerce TULISIE.pl. Jesteśmy praktykami, którzy cały czas pogłębiają swoją wiedzę i doświadczenie w marketingu w wyszukiwarkach.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Obsługa premium naszych partnerów',
+        description:
+          'Działamy we wspólnym interesie, więc szczególnie ważny jest dla nas bezpośredni kontakt z Tobą poprzez kanał na Slack oraz spotkania online, czy rozmowy telefoniczne. Dla nas nie będziesz anonimową pozycją na fakturze.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'Elastyczność współpracy',
+        description:
+          'Realizujemy Twoje cele. Co miesiąc dostosowujemy nasze działania dla najlepszych efektów, które możemy dla Ciebie uzyskać. Z nami pożegnasz „pakietozę usług", bo robimy to co konieczne, a nie to co wymyślił marketingowiec, żeby sprzedać tylko swoje usługi.',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: 'Procesy oparte na TOC',
+        description:
+          'Procesy firmowe oparte na metodologii TOC – terminowość i jakość realizacji usług to nie tylko puste frazesy!',
+        icon: 'tabler:chart-line',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    image={{
+      src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Partner Google',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Jesteśmy Agencją Partnerską Google
+      </h3>
+      <p class="text-muted dark:text-slate-400 text-lg mb-4">
+        Agencja Exelmedia sp. z o.o. spełniła wszystkie wymagania niezbędne do uzyskania statusu Partner Google.
+      </p>
+      <p class="text-muted dark:text-slate-400">
+        Korzystaj z naszej wiedzy i doświadczenia, które potwierdza certyfikat GOOGLE PARTNER.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Nasze podejście do współpracy"
+    subtitle="Przywracamy radość z prowadzenia marketingu SEO/ADS i automatyzacji procesów biznesowych."
+    items={[
+      {
+        title: 'U nas nie jesteś jedynie pozycją na fakturze',
+        description:
+          'Docenisz obsługę premium na każdym etapie współpracy, rozmawiając i budując relację ze specjalistą prowadzącym Twój projekt.',
+      },
+      {
+        title: 'Butikowa agencja z pasją',
+        description:
+          'Jesteśmy butikową agencją, która czerpie satysfakcję z sukcesów swoich partnerów, współpracując z nimi przez lata.',
+      },
+      {
+        title: 'Praktycy e-commerce',
+        description:
+          'Działać będziesz również z praktykami e-commerce, bo przez lata prowadziliśmy swój sklep internetowy, dlatego też możesz czerpać nie tylko z naszej wiedzy branżowej, ale też wieloletniego doświadczenia.',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Co jeszcze nas wyróżnia?"
+    isReversed={true}
+    items={[
+      {
+        title: 'Unikalny proces sprzedaży',
+        description: 'Ty wybierasz cenę usługi – serio sprawdź to!',
+        icon: 'tabler:user-dollar',
+      },
+      {
+        title: 'Brak przymusu kontynuacji',
+        description:
+          'Brak przymusu kontynuacji usługi, bez względu na powód, w każdej chwili możesz przerwać współpracę.',
+        icon: 'tabler:door-exit',
+      },
+      {
+        title: 'Całościowe podejście',
+        description: 'Całościowe podejście do procesu pozycjonowania z nastawieniem na obecne zmiany AI.',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Bogate doświadczenie e-commerce',
+        description:
+          'Bogate doświadczenie w branży e-commerce - prowadziliśmy własny sklep internetowy w branży dziecięcej.',
+        icon: 'tabler:shopping-cart-check',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Skontaktuj się z nami"
+    tagline="Kontakt"
+    columns={2}
+    items={[
+      {
+        title: 'Telefon',
+        description: '+48 510-442-282',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Email',
+        description: 'pomoc@uczciweit.pl',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Adres',
+        description: 'EXELMEDIA SP. Z O.O.<br>Al. Solidarności 68/121<br>00-240 Warszawa',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'NIP',
+        description: '7543087865',
+        icon: 'tabler:file-text',
+      },
+    ]}
+  />
+</Layout>

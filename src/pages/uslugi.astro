@@ -1,0 +1,235 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Usługi - UczciweIT',
+  description: 'Kompleksowe usługi automatyzacji procesów biznesowych, e-commerce, pozycjonowania SEO, Google Ads oraz tworzenia stron internetowych i landing pages. 16 lat doświadczenia jako Partner Google.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Usługi"
+    title="Kompleksowe rozwiązania dla Twojego biznesu"
+    subtitle="Specjalizujemy się w automatyzacji procesów biznesowych, marketingu internetowego, tworzeniu stron internetowych i landing page'ów. Pomagamy firmom oszczędzać czas, redukować koszty i zwiększać efektywność działania."
+    actions={[
+      { variant: 'primary', text: 'Skontaktuj się z nami', href: '/kontakt' },
+      { text: 'Zobacz realizacje', href: '#testimonials' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80',
+      alt: 'Usługi UczciweIT',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Nasze usługi"
+    subtitle="Kompleksowa obsługa marketingowa i technologiczna dla Twojego biznesu"
+    columns={3}
+    items={[
+      {
+        title: 'Automatyzacja procesów biznesowych',
+        description:
+          'Automatyzacja powtarzalnych zadań, integracje systemów ERP, synchronizacja danych między aplikacjami. Oszczędzaj czas i redukuj błędy ludzkie.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Automatyzacja e-commerce',
+        description:
+          'Integracje z Allegro, aktualizacja stanów magazynowych, synchronizacja z systemami ERP jak COMARCH OPTIMA, wystawianie plików XML dla porównywarek cenowych.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Przetwarzanie dokumentów (OCR)',
+        description: 'Automatyczne rozpoznawanie tekstu ze skanów, PDF-ów i obrazów. Ekstrakcja danych z faktur, umów i dokumentów bez ręcznego przepisywania.',
+        icon: 'tabler:scan',
+      },
+      {
+        title: 'Web scraping i pozyskiwanie danych',
+        description:
+          'Masowe pobieranie danych z internetu, budowanie baz kontaktów, monitoring konkurencji. Automatyczne zbieranie informacji z dowolnych źródeł.',
+        icon: 'tabler:database-import',
+      },
+      {
+        title: 'Email marketing automation',
+        description:
+          'Automatyzacja kampanii mailingowych, segmentacja klientów, personalizacja komunikacji, budowanie baz kontaktów i zarządzanie subskrypcjami.',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Pozycjonowanie SEO',
+        description:
+          'Kompleksowe pozycjonowanie stron w Google, optymalizacja dla agentów AI, audyty SEO, link building. 16 lat doświadczenia jako Partner Google.',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'Google Ads',
+        description:
+          'Kampanie reklamowe w Google Ads, optymalizacja budżetu reklamowego, remarketing, kampanie produktowe dla e-commerce. Certyfikowany Partner Google.',
+        icon: 'tabler:ad',
+      },
+      {
+        title: 'Strony internetowe',
+        description: `Projektowanie i wdrażanie firmowych stron internetowych. Nowoczesne, responsywne witryny dopasowane do potrzeb Twojego biznesu.`,
+        icon: 'tabler:world-www',
+      },
+      {
+        title: 'Landing page',
+        description:
+          `Tworzenie konwertujących landing page'ów do kampanii reklamowych. Optymalizacja pod kątem współczynnika konwersji i generowania leadów.`,
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Doświadczenie i certyfikaty',
+        description:
+          '16 lat doświadczenia w marketingu internetowym, certyfikowany Partner Google, własne projekty e-commerce - pracujesz z praktykami.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Indywidualne podejście',
+        description:
+          'Każdy projekt dostosowujemy do specyfiki Twojego biznesu. Nie ma u nas "pakietów" - robimy to, co naprawdę przynosi efekty.',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Transparentność',
+        description:
+          'Szczegółowe raporty z działań, stały dostęp do statystyk, pełna przejrzystość kosztów. Wiesz dokładnie, za co płacisz i jakie osiągasz rezultaty.',
+        icon: 'tabler:eye-check',
+      },
+      {
+        title: 'Wsparcie i komunikacja',
+        description:
+          'Bezpośredni kontakt przez Slack, spotkania online, rozmowy telefoniczne. Dla nas nie jesteś anonimową pozycją na fakturze.',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Dlaczego my',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Dlaczego UczciweIT?</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Oszczędność czasu',
+        description:
+          'Automatyzacja procesów i sprawne działania marketingowe pozwalają Ci skupić się na rozwoju biznesu zamiast na rutynowych zadaniach.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Mierzalne rezultaty',
+        description:
+          'Koncentrujemy się na efektach - zwiększenie ruchu, poprawa pozycji w Google, więcej konwersji. Wszystko mierzalne i udokumentowane.',
+        icon: 'tabler:chart-arrows',
+      },
+      {
+        title: 'Oszczędność kosztów',
+        description:
+          'Automatyzacja redukuje koszty operacyjne, a efektywny marketing daje lepszy zwrot z inwestycji niż chaotyczne działania.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Elastyczna współpraca',
+        description:
+          'Bez długoterminowych zobowiązań i kar umownych. Możesz przerwać współpracę w każdej chwili - jesteśmy pewni naszych usług.',
+        icon: 'tabler:checks',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Korzyści',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Korzyści współpracy</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    id="testimonials"
+    title="Opinie naszych klientów"
+    testimonials={[
+      {
+        testimonial: `Czuję, że robią konkretną robotę i jeśli gdzieś roboty robi się mniej (zrobiliśmy wystarczająco w danej chwili) – pytają się, gdzie przesunąć dany budżet, by lepiej wszystko funkcjonowało. Polecam!`,
+        name: 'Artem Rusin',
+        job: 'Biurodlamisia.pl',
+        image: {
+          src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Artem Rusin',
+        },
+      },
+      {
+        testimonial: `Jestem bardzo zadowolony ze współpracy z firmą EXELMEDIA i życzyłbym sobie więcej tak dobrze współpracujących firm i osób w nich pracujących.`,
+        name: 'Dariusz Urbaś',
+        job: 'Budmater.pl',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Dariusz Urbaś',
+        },
+      },
+      {
+        testimonial: `Doskonali specjaliści, na których można polegać. Dziękuję za dotychczasową współpracę i liczę na więcej.`,
+        name: 'Przemysław Kutnyj',
+        job: 'Przemysławkutnyj.pl',
+        image: {
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Przemysław Kutnyj',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Skontaktuj się z nami',
+        href: '/kontakt',
+      },
+      {
+        text: 'Zobacz więcej',
+        href: '/',
+      },
+    ]}
+    title="Gotowy na zmiany w swoim biznesie?"
+    subtitle="Skontaktuj się z nami i dowiedz się, jak możemy pomóc Twojej firmie rozwijać się dzięki automatyzacji i skutecznemu marketingowi."
+  />
+</Layout>

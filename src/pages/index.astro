@@ -13,7 +13,8 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Automatyzacja procesów biznesowych, marketingowych i e-commerce | Uczciwe SEO',
+  title: 'Automatyzacja procesów biznesowych, marketingowych i e-commerce | UczciweIT',
+  description: 'Automatyzacja procesów biznesowych, e-commerce i marketingu. Integracje z Allegro, systemami ERP, OCR, web scraping, email marketing. 16 lat doświadczenia. Partner Google.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,18 +26,17 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Sprawdź uczciweseo.pl',
-        href: 'https://uczciweseo.pl',
-        target: '_blank',
+        text: 'Sprawdź UczciweIT.pl',
+        href: '/o-nas',
         icon: 'tabler:arrow-right',
       },
-      { text: 'Dowiedz się więcej', href: '#features' },
+      { text: 'Sprawdź usługi', href: '/uslugi' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/hero-banner.jpg', alt: 'UczciweIT - Automatyzacja procesów biznesowych' }}
   >
     <Fragment slot="title">
-      Automatyzacja procesów <span class="hidden xl:inline">biznesowych,</span>
-      <span class="text-accent dark:text-white"> marketingowych</span> i e-commerce
+      Automatyzacja procesów biznesowych,
+      <span class="text-accent dark:text-white">marketingowych</span> <br /> i e-commerce
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -123,7 +123,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: '~/assets/images/content-1.jpg',
       alt: 'Narzędzia automatyzacji',
     }}
   >
@@ -163,7 +163,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80',
+      src: '~/assets/images/content-2.jpg',
       alt: 'E-commerce automation',
     }}
   >
@@ -201,7 +201,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: '~/assets/images/content-3.jpg',
       alt: 'Korzyści automatyzacji',
     }}
   >
@@ -243,7 +243,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: '~/assets/images/content-4.jpg',
       alt: 'Proces wdrożenia automatyzacji',
     }}
   />
@@ -380,7 +380,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Sprawdź uczciweseo.pl',
+        text: 'Sprawdź UczciweSEO.pl',
         href: 'https://uczciweseo.pl',
         target: '_blank',
         icon: 'tabler:arrow-right',
@@ -388,11 +388,11 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Poznaj też uczciweseo.pl
+      Poznaj też UczciweSEO.pl
     </Fragment>
 
     <Fragment slot="subtitle">
-      Chcesz zwiększyć widoczność swojego serwisu internetowego w wyszukiwarce Google i w agentach AI? <br class="hidden md:inline" />Skontaktuj się z nami
+      Chcesz zwiększyć widoczność swojego serwisu internetowego w wyszukiwarce Google i w agentach AI? <br class="hidden md:inline" /> Skontaktuj się z nami!
     </Fragment>
   </CallToAction>
 </Layout>

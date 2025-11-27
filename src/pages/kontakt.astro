@@ -1,0 +1,87 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Kontakt - UczciweIT',
+  description: 'Skontaktuj się z UczciweIT. Telefon: +48 510-442-282, Email: pomoc@uczciweit.pl. Oferujemy bezpłatną konsultację w zakresie automatyzacji procesów biznesowych, SEO i Google Ads.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Kontakt" title="Zacznijmy współpracę" />
+
+  <ContactUs
+    id="form"
+    title="Potrzebujesz pomocy?"
+    subtitle="Jeśli nie chcesz dzwonić, zostaw swoje dane, a my oddzwonimy do Ciebie. Nasz zespół odpowiada zwykle w ciągu 24 godzin roboczych."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Imię i nazwisko',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Adres e-mail',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: 'Numer telefonu',
+      },
+    ]}
+    textarea={{
+      label: 'Wiadomość',
+    }}
+    disclaimer={{
+      label:
+        'Przesyłając ten formularz kontaktowy, potwierdzasz i zgadzasz się na przetwarzanie Twoich danych osobowych.',
+    }}
+    description="Odpowiadamy zazwyczaj w ciągu 24 godzin roboczych."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Skontaktuj się z nami"
+    subtitle="Jesteśmy tu, aby pomóc w automatyzacji Twojego biznesu"
+    items={[
+      {
+        title: 'Telefon',
+        description: '+48 510-442-282',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Email',
+        description: 'pomoc@uczciweit.pl',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Adres',
+        description: 'EXELMEDIA SP. Z O.O.<br>Al. Solidarności 68/121<br>00-240 Warszawa',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Sprzedaż',
+        description: 'Paweł Wencel<br>Tel: 510 442 282<br>Email: pomoc@uczciweit.pl',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Administracja',
+        description: 'Anna Gos<br>Email: pomoc@uczciweit.pl',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Dane rejestrowe',
+        description: 'NIP: 7543087865<br>REGON: 360329184<br>KRS: 0000535644',
+        icon: 'tabler:file-text',
+      },
+    ]}
+  />
+</Layout>
