@@ -65,13 +65,7 @@ export async function getArticles(
   const query: Record<string, string | number | boolean | string[]> = {
     'pagination[page]': page,
     'pagination[pageSize]': pageSize,
-    'populate[image]': '*',
-    'populate[category]': '*',
-    'populate[tags]': '*',
-    'populate[author]': '*',
-    'populate[author][populate][avatar]': '*',
-    'populate[seo]': '*',
-    'populate[seo][populate][metaImage]': '*',
+    'populate': '*', // Populate all relations that exist
     'sort[0]': 'publishedAt:desc',
   };
 
@@ -91,13 +85,7 @@ export async function getArticles(
 export async function getArticleBySlug(slug: string): Promise<StrapiArticle | null> {
   const query: Record<string, string | number | boolean | string[]> = {
     'filters[slug][$eq]': slug,
-    'populate[image]': '*',
-    'populate[category]': '*',
-    'populate[tags]': '*',
-    'populate[author]': '*',
-    'populate[author][populate][avatar]': '*',
-    'populate[seo]': '*',
-    'populate[seo][populate][metaImage]': '*',
+    'populate': '*',
   };
 
   const response = await fetchAPI<StrapiResponse<StrapiArticle[]>>('/articles', query);
@@ -114,13 +102,7 @@ export async function getArticleBySlug(slug: string): Promise<StrapiArticle | nu
  */
 export async function getArticleById(documentId: string): Promise<StrapiArticle | null> {
   const query: Record<string, string | number | boolean | string[]> = {
-    'populate[image]': '*',
-    'populate[category]': '*',
-    'populate[tags]': '*',
-    'populate[author]': '*',
-    'populate[author][populate][avatar]': '*',
-    'populate[seo]': '*',
-    'populate[seo][populate][metaImage]': '*',
+    'populate': '*',
   };
 
   try {
