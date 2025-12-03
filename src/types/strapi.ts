@@ -100,15 +100,10 @@ export interface StrapiArticle {
   updatedAt: string;
   image: StrapiImage | null;
 
-  // Relations can have different naming conventions
-  category?: StrapiCategory | null;
-  Categories?: StrapiCategory[];
-
+  // Relations (plural field names in Strapi)
+  categories?: StrapiCategory[];
   tags?: StrapiTag[];
-  Tags?: StrapiTag[] | null;
-
-  author?: StrapiAuthor | null;
-  Authors?: StrapiAuthor[];
+  authors?: StrapiAuthor[];
 
   seo?: {
     metaTitle: string | null;

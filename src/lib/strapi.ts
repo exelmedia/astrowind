@@ -65,7 +65,7 @@ export async function getArticles(
   const query: Record<string, string | number | boolean | string[]> = {
     'pagination[page]': page,
     'pagination[pageSize]': pageSize,
-    'populate': '*', // Populate all relations that exist
+    'populate': '*',
     'sort[0]': 'publishedAt:desc',
   };
 
