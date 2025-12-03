@@ -99,10 +99,18 @@ export interface StrapiArticle {
   createdAt: string;
   updatedAt: string;
   image: StrapiImage | null;
-  category: StrapiCategory | null;
-  tags: StrapiTag[];
-  author: StrapiAuthor | null;
-  seo: {
+
+  // Relations can have different naming conventions
+  category?: StrapiCategory | null;
+  Categories?: StrapiCategory[];
+
+  tags?: StrapiTag[];
+  Tags?: StrapiTag[] | null;
+
+  author?: StrapiAuthor | null;
+  Authors?: StrapiAuthor[];
+
+  seo?: {
     metaTitle: string | null;
     metaDescription: string | null;
     keywords: string | null;

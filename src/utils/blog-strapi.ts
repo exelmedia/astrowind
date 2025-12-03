@@ -1,6 +1,6 @@
 import type { PaginateFunction } from 'astro';
 import type { Post } from '~/types';
-import type { StrapiArticle } from '~/types/strapi';
+import type { StrapiArticle, StrapiTag } from '~/types/strapi';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
 import { getAllArticles, getArticleBySlug, getStrapiImageUrl, getOptimizedImageUrl, blocksToHtml } from '~/lib/strapi';
@@ -48,19 +48,27 @@ const convertStrapiArticleToPost = async (article: StrapiArticle): Promise<Post>
   const publishDate = new Date(article.publishedAt);
   const updateDate = article.updatedAt ? new Date(article.updatedAt) : undefined;
 
-  const category = article.category
-    ? {
-        slug: cleanSlug(article.category.slug),
-        title: article.category.name,
-      }
-    : undefined;
+  // Handle category - can be 'category' (single) or 'Categories' (array)
+  let category: { slug: string; title: string } | undefined = undefined;
+  if (article.category) {
+    category = {
+      slug: cleanSlug(article.category.slug),
+      title: article.category.name,
+    };
+  } else if (article.Categories && article.Categories.length > 0) {
+    // If using Categories array, take the first one
+    category = {
+      slug: cleanSlug(article.Categories[0].slug),
+      title: article.Categories[0].name,
+    };
+  }
 
-  const tags = article.tags
-    ? article.tags.map((tag) => ({
-        slug: cleanSlug(tag.slug),
-        title: tag.name,
-      }))
-    : [];
+  // Handle tags - can be 'tags' or 'Tags' array
+  const tagsArray = (article.tags || article.Tags || []) as StrapiTag[];
+  const tags = tagsArray.map((tag) => ({
+    slug: cleanSlug(tag.slug),
+    title: tag.name,
+  }));
 
   const imageUrl = article.image ? getOptimizedImageUrl(article.image) : null;
 
@@ -89,7 +97,7 @@ const convertStrapiArticleToPost = async (article: StrapiArticle): Promise<Post>
 
     category: category,
     tags: tags,
-    author: article.author?.name,
+    author: article.author?.name || (article.Authors && article.Authors.length > 0 ? article.Authors[0].name : undefined),
 
     draft: false, // Strapi only returns published articles
 
