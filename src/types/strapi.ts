@@ -69,12 +69,31 @@ export interface StrapiAuthor {
   publishedAt: string;
 }
 
+// Strapi Blocks format (Rich Text Editor v2)
+export interface StrapiBlockNode {
+  type: string;
+  children?: Array<{
+    type: string;
+    text?: string;
+    bold?: boolean;
+    italic?: boolean;
+    underline?: boolean;
+    strikethrough?: boolean;
+    code?: boolean;
+    children?: StrapiBlockNode[];
+  }>;
+  level?: number;
+  format?: string;
+  image?: StrapiImage;
+  url?: string;
+}
+
 export interface StrapiArticle {
   id: number;
   documentId: string;
   title: string;
   slug: string;
-  content: string;
+  content: string | StrapiBlockNode[]; // Can be string (old format) or blocks (new format)
   excerpt: string | null;
   publishedAt: string;
   createdAt: string;

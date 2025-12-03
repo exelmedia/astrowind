@@ -3,13 +3,6 @@ import type { StrapiArticle, StrapiResponse, StrapiSingleResponse } from '~/type
 const STRAPI_URL = import.meta.env.STRAPI_URL || 'https://strapi-u53948.vm.elestio.app';
 const STRAPI_API_TOKEN = import.meta.env.STRAPI_API_TOKEN;
 
-interface FetchOptions {
-  endpoint: string;
-  query?: Record<string, string | number | boolean | string[]>;
-  wrappedByKey?: string;
-  wrappedByList?: boolean;
-}
-
 /**
  * Fetch data from Strapi API
  */
@@ -219,4 +212,99 @@ export function getOptimizedImageUrl(image: { formats?: { medium?: { url: string
   const largeUrl = image.formats?.large?.url;
 
   return getStrapiImageUrl(mediumUrl || largeUrl || image.url);
+}
+
+/**
+ * Convert Strapi Blocks format to HTML
+ */
+export function blocksToHtml(blocks: any): string {
+  if (!blocks || !Array.isArray(blocks)) {
+    return typeof blocks === 'string' ? blocks : '';
+  }
+
+  return blocks.map((block: any) => {
+    switch (block.type) {
+      case 'paragraph':
+        const paragraphContent = block.children?.map((child: any) => formatTextNode(child)).join('') || '';
+        return `<p>${paragraphContent}</p>`;
+
+      case 'heading':
+        const level = block.level || 1;
+        const headingContent = block.children?.map((child: any) => formatTextNode(child)).join('') || '';
+        return `<h${level}>${headingContent}</h${level}>`;
+
+      case 'list':
+        const listTag = block.format === 'ordered' ? 'ol' : 'ul';
+        const listItems = block.children?.map((child: any) => blocksToHtml([child])).join('') || '';
+        return `<${listTag}>${listItems}</${listTag}>`;
+
+      case 'list-item':
+        const itemContent = block.children?.map((child: any) => formatTextNode(child)).join('') || '';
+        return `<li>${itemContent}</li>`;
+
+      case 'quote':
+        const quoteContent = block.children?.map((child: any) => formatTextNode(child)).join('') || '';
+        return `<blockquote>${quoteContent}</blockquote>`;
+
+      case 'code':
+        const codeContent = block.children?.map((child: any) => child.text || '').join('') || '';
+        return `<pre><code>${escapeHtml(codeContent)}</code></pre>`;
+
+      case 'image':
+        const imageUrl = getStrapiImageUrl(block.image?.url);
+        const alt = block.image?.alternativeText || '';
+        return imageUrl ? `<img src="${imageUrl}" alt="${alt}" />` : '';
+
+      case 'link':
+        const linkContent = block.children?.map((child: any) => formatTextNode(child)).join('') || '';
+        return `<a href="${block.url}">${linkContent}</a>`;
+
+      default:
+        // For unknown types, try to render children
+        if (block.children) {
+          return block.children.map((child: any) => formatTextNode(child)).join('');
+        }
+        return '';
+    }
+  }).join('\n');
+}
+
+/**
+ * Format a text node with inline formatting
+ */
+function formatTextNode(node: any): string {
+  if (!node) return '';
+
+  if (node.type === 'text' || node.text !== undefined) {
+    let text = node.text || '';
+
+    if (node.bold) text = `<strong>${text}</strong>`;
+    if (node.italic) text = `<em>${text}</em>`;
+    if (node.underline) text = `<u>${text}</u>`;
+    if (node.strikethrough) text = `<s>${text}</s>`;
+    if (node.code) text = `<code>${escapeHtml(text)}</code>`;
+
+    return text;
+  }
+
+  // Handle nested nodes
+  if (node.children) {
+    return node.children.map((child: any) => formatTextNode(child)).join('');
+  }
+
+  return '';
+}
+
+/**
+ * Escape HTML special characters
+ */
+function escapeHtml(text: string): string {
+  const map: { [key: string]: string } = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, (m) => map[m]);
 }

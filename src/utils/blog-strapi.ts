@@ -3,7 +3,7 @@ import type { Post } from '~/types';
 import type { StrapiArticle } from '~/types/strapi';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
-import { getAllArticles, getArticleBySlug, getStrapiImageUrl, getOptimizedImageUrl } from '~/lib/strapi';
+import { getAllArticles, getArticleBySlug, getStrapiImageUrl, getOptimizedImageUrl, blocksToHtml } from '~/lib/strapi';
 
 const generatePermalink = async ({
   id,
@@ -64,8 +64,15 @@ const convertStrapiArticleToPost = async (article: StrapiArticle): Promise<Post>
 
   const imageUrl = article.image ? getOptimizedImageUrl(article.image) : null;
 
+  // Convert content: if it's blocks format, convert to HTML; otherwise use as is
+  const htmlContent = Array.isArray(article.content)
+    ? blocksToHtml(article.content)
+    : (typeof article.content === 'string' ? article.content : '');
+
   // Calculate approximate reading time (assuming 200 words per minute)
-  const wordCount = article.content ? article.content.split(/\s+/).length : 0;
+  // Strip HTML tags for word count
+  const textContent = htmlContent.replace(/<[^>]*>/g, ' ');
+  const wordCount = textContent.split(/\s+/).filter(word => word.length > 0).length;
   const readingTime = Math.ceil(wordCount / 200);
 
   return {
@@ -94,7 +101,7 @@ const convertStrapiArticleToPost = async (article: StrapiArticle): Promise<Post>
       : {},
 
     // Store HTML content from Strapi
-    content: article.content,
+    content: htmlContent,
 
     readingTime: readingTime,
   };
