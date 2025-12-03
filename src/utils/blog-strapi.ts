@@ -64,6 +64,7 @@ const convertStrapiArticleToPost = async (article: StrapiArticle): Promise<Post>
   }));
 
   const imageUrl = article.image ? getOptimizedImageUrl(article.image) : null;
+  const imageAlt = article.image?.alternativeText || article.title;
 
   // Convert content: if it's blocks format, convert to HTML; otherwise use as is
   const htmlContent = Array.isArray(article.content)
@@ -87,6 +88,7 @@ const convertStrapiArticleToPost = async (article: StrapiArticle): Promise<Post>
     title: article.title,
     excerpt: article.excerpt || undefined,
     image: imageUrl || undefined,
+    imageAlt: imageAlt,
 
     category: category,
     tags: tags,
