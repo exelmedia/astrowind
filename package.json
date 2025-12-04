@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "prebuild": "node scripts/convert-csv-to-json.js",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -30,7 +31,6 @@
     "astro": "^5.12.9",
     "astro-embed": "^0.9.0",
     "astro-icon": "^1.1.5",
-    "duckdb-async": "^1.4.2",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
     "unpic": "^4.1.3"

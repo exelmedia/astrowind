@@ -5,10 +5,10 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import { getAllCityPages, getCityPageBySlug, type CityPage } from '~/lib/duckdb';
+import { getAllCityPages, type CityPage } from '~/lib/cities';
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const cities = await getAllCityPages();
+export const getStaticPaths: GetStaticPaths = () => {
+  const cities = getAllCityPages();
 
   return cities.map((city) => ({
     params: { city: city.Slug },
