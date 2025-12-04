@@ -49,7 +49,7 @@ const { cityData } = Astro.props;
   <!-- Content Section -->
   <Content
     title="Czym jest automatyzacja procesów biznesowych?"
-    subtitle="Kompleksowe rozwiązania dla firm w {cityData['miasto-odmienione']}"
+    subtitle={`Kompleksowe rozwiązania dla firm w ${cityData['miasto-odmienione']}`}
     items={[
       {
         title: 'Automatyzacja marketingu',
@@ -82,7 +82,7 @@ const { cityData } = Astro.props;
 
   <!-- Features Section -->
   <Features3
-    title="Nasze usługi w {cityData['miasto-odmienione']}"
+    title={`Nasze usługi w ${cityData['miasto-odmienione']}`}
     subtitle="Co możemy zautomatyzować w Twojej firmie?"
     columns={3}
     items={[
@@ -121,7 +121,7 @@ const { cityData } = Astro.props;
 
   <!-- Call to Action -->
   <CallToAction
-    title="Gotowy na automatyzację w {cityData['miasto-odmienione']}?"
+    title={`Gotowy na automatyzację w ${cityData['miasto-odmienione']}?`}
     subtitle="Skontaktuj się z nami i dowiedz się, jak możemy pomóc Twojej firmie"
     actions={[
       {

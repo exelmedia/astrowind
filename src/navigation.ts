@@ -144,6 +144,7 @@ export const footerData = {
         { text: 'O nas', href: getPermalink('/o-nas') },
         { text: 'Kontakt', href: getPermalink('/kontakt') },
         { text: 'Blog', href: getBlogPermalink() },
+        { text: 'Automatyzacja dla miast', href: getPermalink('/automatyzacja-dla-miast') },
       ],
     },
   ],
