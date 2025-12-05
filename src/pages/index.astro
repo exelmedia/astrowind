@@ -13,6 +13,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
   title: 'Automatyzacja procesów biznesowych, marketingowych i e-commerce | UczciweIT',
@@ -313,6 +314,41 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Opinie naszych klientów"
+    testimonials={[
+      {
+        testimonial: `Czuję, że robią konkretną robotę i jeśli gdzieś roboty robi się mniej (zrobiliśmy wystarczająco w danej chwili) – pytają się, gdzie przesunąć dany budżet, by lepiej wszystko funkcjonowało. Polecam!`,
+        name: 'Artem Rusin',
+        job: 'Biurodlamisia.pl',
+        image: {
+          src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Artem Rusin',
+        },
+      },
+      {
+        testimonial: `Jestem bardzo zadowolony ze współpracy z firmą EXELMEDIA i życzyłbym sobie więcej tak dobrze współpracujących firm i osób w nich pracujących.`,
+        name: 'Dariusz Urbaś',
+        job: 'Budmater.pl',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Dariusz Urbaś',
+        },
+      },
+      {
+        testimonial: `Doskonali specjaliści, na których można polegać. Dziękuję za dotychczasową współpracę i liczę na więcej.`,
+        name: 'Przemysław Kutnyj',
+        job: 'Przemysławkutnyj.pl',
+        image: {
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Przemysław Kutnyj',
+        },
+      },
+    ]}
+  />
 
   <!-- HighlightedPosts Widget ******* -->
 

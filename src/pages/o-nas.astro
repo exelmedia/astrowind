@@ -5,8 +5,10 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
-import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import Layout from '~/layouts/PageLayout.astro';
+
+import uczciweItOnas from '~/assets/images/uczciweit-onas.jpg';
 
 const metadata = {
   title: 'O nas - UczciweIT',
@@ -21,7 +23,7 @@ const metadata = {
   <Hero
     tagline="O nas"
     image={{
-      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: uczciweItOnas,
       alt: 'UczciweIT Team',
     }}
   >
@@ -30,11 +32,11 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Naszą misją jest pomóc Tobie w budowaniu widoczności biznesu w wyszukiwarkach i narzędziach AI.
+      Naszą misją jest pomóc Tobie usprawnić procesy w Twoim biznesie. 
       <br /><br />
-      Z nami doświadczysz piękna uczciwego biznesu, a przy okazji otrzymasz wysokiej jakości usługi automatyzacji procesów biznesowych, pozycjonowania SEO i reklamy Google ADS.
+      Z nami doświadczysz piękna uczciwego biznesu, a przy okazji otrzymasz wysokiej jakości usługi automatyzacji procesów biznesowych.
       <br /><br />
-      Dla nas kluczowe jest Twoje bezpieczeństwo biznesowe i zadowolenie z każdego aspektu usługi, począwszy od samych usług automatyzacji/SEO/ADS, a skończywszy na partnerskiej obsłudze na co dzień.
+      Dla nas kluczowe jest Twoje bezpieczeństwo biznesowe i zadowolenie z każdego aspektu usługi, począwszy od samych usług automatyzacji, a skończywszy na partnerskiej obsłudze na co dzień.
       <br /><br />
       Nie podpisujemy umów na lata, nie związujemy karami, czy innymi zabiegami, które rzutują na partnerską współpracę.
       <br /><br />
@@ -63,7 +65,7 @@ const metadata = {
       {
         title: 'Bezpieczeństwo biznesowe i prawne',
         description:
-          'Umowa nie zawiera nieuczciwych zapisów, a wszystkie wybudowane zasoby po zakończeniu współpracy (w tym linki) pozostaną Twoją własnością.',
+          'Umowa nie zawiera nieuczciwych zapisów, a wszystkie wybudowane zasoby po zakończeniu współpracy, pozostaną Twoją własnością.',
         icon: 'tabler:shield-check',
       },
       {
@@ -75,7 +77,7 @@ const metadata = {
       {
         title: 'Bezpieczeństwo działań',
         description:
-          'Działamy na sprawdzonej wiedzy SEO/ADS i wieloletnim doświadczeniu, w tym pozyskanym we własnym projekcie e-commerce TULISIE.pl. Jesteśmy praktykami, którzy cały czas pogłębiają swoją wiedzę i doświadczenie w marketingu w wyszukiwarkach.',
+          'Wiemy jak ważne są Twoje dane, więc wszystko co robimy nakierowane jest na bezpieczeństwo samych procesów.',
         icon: 'tabler:certificate',
       },
       {
@@ -103,37 +105,86 @@ const metadata = {
     </Fragment>
   </Features2>
 
-  <!-- Content Widget **************** -->
+  <!-- Features2 Widget ************** -->
 
-  <Content
-    isReversed
-    image={{
-      src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Partner Google',
-    }}
+  <Features2
+    title="Narzędzia, które wykorzystujemy"
+    subtitle="Tworzymy rozwiązania automatyzacyjne przy użyciu najnowocześniejszych platform i technologii"
+    tagline="Technologie"
+    columns={3}
+    items={[
+      {
+        title: 'N8N.io',
+        description: 'Platforma do automatyzacji workflow z otwartym kodem źródłowym. Umożliwia tworzenie zaawansowanych automatyzacji bez ograniczeń.',
+        icon: 'tabler:git-merge',
+      },
+      {
+        title: 'Make.com',
+        description: 'Potężne narzędzie do automatyzacji procesów biznesowych. Wizualne projektowanie scenariuszy integracji między aplikacjami.',
+        icon: 'tabler:puzzle',
+      },
+      {
+        title: 'Zapier.com',
+        description: 'Lider w automatyzacji zadań między aplikacjami. Tysiące dostępnych integracji dla Twojego biznesu.',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: 'Supabase.com',
+        description: 'Nowoczesna baza danych z real-time API. Alternatywa dla Firebase z pełną kontrolą nad danymi.',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Strapi.io',
+        description: 'Headless CMS z otwartym kodem. Elastyczne zarządzanie treścią z potężnym API.',
+        icon: 'tabler:layout-grid',
+      },
+      {
+        title: 'Google Cloud',
+        description: 'Infrastruktura chmurowa Google. Skalowalność i bezpieczeństwo na najwyższym poziomie.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'Astro.build',
+        description: 'Nowoczesny framework do budowy stron internetowych. Szybkość, SEO i doskonała wydajność out-of-the-box.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'NocoDB.com',
+        description: 'Zamieniaj bazy danych w inteligentne arkusze kalkulacyjne z API.',
+        icon: 'tabler:table',
+      },
+      {
+        title: 'FlowiseAI.com',
+        description: 'Low-code platform do budowania aplikacji AI. Twórz chatboty i asystentów AI bez kodowania.',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Langflow.org',
+        description: 'Wizualne narzędzie do tworzenia przepływów AI. Możliwość budowania zaawansowanych aplikacje LLM.',
+        icon: 'tabler:transform',
+      },
+      {
+        title: 'Airtable.com',
+        description: 'Hybrydowe narzędzie łączące bazę danych z arkuszem kalkulacyjnym. Idealne do zarządzania projektami i danymi.',
+        icon: 'tabler:list',
+      },
+      {
+        title: 'GetLate.dev',
+        description: 'Automatyczna dystrybucja contentu na media społecznościowe oraz analityka.',
+        icon: 'tabler:calendar',
+      },
+    ]}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Jesteśmy Agencją Partnerską Google
-      </h3>
-      <p class="text-muted dark:text-slate-400 text-lg mb-4">
-        Agencja Exelmedia sp. z o.o. spełniła wszystkie wymagania niezbędne do uzyskania statusu Partner Google.
-      </p>
-      <p class="text-muted dark:text-slate-400">
-        Korzystaj z naszej wiedzy i doświadczenia, które potwierdza certyfikat GOOGLE PARTNER.
-      </p>
-    </Fragment>
-
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Features2>
 
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
     title="Nasze podejście do współpracy"
-    subtitle="Przywracamy radość z prowadzenia marketingu SEO/ADS i automatyzacji procesów biznesowych."
+    subtitle="Z nami przeprowadzisz automatyzację procesów biznesowych."
     items={[
       {
         title: 'U nas nie jesteś jedynie pozycją na fakturze',
@@ -153,35 +204,63 @@ const metadata = {
     ]}
   />
 
-  <!-- Steps2 Widget ****************** -->
+  <!-- Features2 Widget ************** -->
 
-  <Steps2
-    title="Co jeszcze nas wyróżnia?"
-    isReversed={true}
+  <Features2
+    title="Co możemy Ci jeszcze zaoferować?"
+    subtitle="Oprócz automatyzacji procesów biznesowych, oferujemy również kompleksowe usługi SEO i marketingu internetowego"
+    columns={3}
     items={[
       {
-        title: 'Unikalny proces sprzedaży',
-        description: 'Ty wybierasz cenę usługi – serio sprawdź to!',
-        icon: 'tabler:user-dollar',
+        title: 'Pozycjonowanie SEO',
+        description: 'Kompleksowe pozycjonowanie stron w Google. Audyty SEO, optymalizacja techniczna, budowanie autorytetu domeny.',
+        icon: 'tabler:chart-line',
       },
       {
-        title: 'Brak przymusu kontynuacji',
-        description:
-          'Brak przymusu kontynuacji usługi, bez względu na powód, w każdej chwili możesz przerwać współpracę.',
-        icon: 'tabler:door-exit',
-      },
-      {
-        title: 'Całościowe podejście',
-        description: 'Całościowe podejście do procesu pozycjonowania z nastawieniem na obecne zmiany AI.',
+        title: 'Optymalizacja dla AI',
+        description: 'Przygotowanie treści pod kątem wyszukiwarek AI (ChatGPT, Perplexity, Claude). Pozycjonowanie w erze sztucznej inteligencji.',
         icon: 'tabler:brain',
       },
       {
-        title: 'Bogate doświadczenie e-commerce',
-        description:
-          'Bogate doświadczenie w branży e-commerce - prowadziliśmy własny sklep internetowy w branży dziecięcej.',
-        icon: 'tabler:shopping-cart-check',
+        title: 'Google Ads',
+        description: 'Skuteczne kampanie reklamowe w Google Ads. Optymalizacja budżetu, remarketing, kampanie produktowe.',
+        icon: 'tabler:ad',
+      },
+      {
+        title: 'Content Marketing',
+        description: 'Tworzenie wartościowych treści SEO. Artykuły blogowe, opisy produktów, landing pages zoptymalizowane pod konwersję.',
+        icon: 'tabler:pencil',
+      },
+      {
+        title: 'Audyty SEO',
+        description: 'Szczegółowa analiza techniczna witryny. Identyfikacja problemów i rekomendacje optymalizacyjne.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Link Building',
+        description: 'Budowanie profilu linków zwrotnych. Pozyskiwanie wartościowych linków z branżowych serwisów.',
+        icon: 'tabler:link',
       },
     ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Odwiedź UczciweSEO.pl',
+        href: 'https://uczciweseo.pl',
+        target: '_blank',
+      },
+    ]}
+    title="Chcesz zwiększyć widoczność w Google i wyszukiwarkach AI?"
+    subtitle="Odwiedź naszą dedykowaną stronę UczciweSEO.pl i dowiedz się więcej o kompleksowych usługach pozycjonowania i marketingu internetowego."
   />
 
   <!-- Features2 Widget ************** -->

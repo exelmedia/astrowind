@@ -8,6 +8,10 @@ import Hero from '~/components/widgets/Hero.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+import automatyzacjaProcesow from '~/assets/images/automatyzacja-procesow.jpg';
+import wspolpracaAutomatyzacja from '~/assets/images/wspolpraca-automatyzacja.jpg';
+import oszczednoscCzasuPieniedzy from '~/assets/images/oszczednosc-czasu-pieniedzy.jpg';
+
 const metadata = {
   title: 'Usługi - UczciweIT',
   description: 'Kompleksowe usługi automatyzacji procesów biznesowych, e-commerce, pozycjonowania SEO, Google Ads oraz tworzenia stron internetowych i landing pages. 16 lat doświadczenia jako Partner Google.',
@@ -20,15 +24,15 @@ const metadata = {
 
   <Hero
     tagline="Usługi"
-    title="Kompleksowe rozwiązania dla Twojego biznesu"
-    subtitle="Specjalizujemy się w automatyzacji procesów biznesowych, marketingu internetowego, tworzeniu stron internetowych i landing page'ów. Pomagamy firmom oszczędzać czas, redukować koszty i zwiększać efektywność działania."
+    title="Automatyzacja procesów biznesowych w Twojej firmie"
+    subtitle="Specjalizujemy się w automatyzacji firm, nasze rozwiązania pomagają usprawnić procesy: marketingowe, administracyjne, sprzedażowe, e-commerce. Pomagamy firmom oszczędzać czas, redukować koszty i zwiększać efektywność działania."
     actions={[
       { variant: 'primary', text: 'Skontaktuj się z nami', href: '/kontakt' },
-      { text: 'Zobacz realizacje', href: '#testimonials' },
+      { text: 'Nasz wyróżnik', href: '#dlaczego-uczciweit' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80',
-      alt: 'Usługi UczciweIT',
+      src: automatyzacjaProcesow,
+      alt: 'Automatyzacja procesów biznesowych',
     }}
   />
 
@@ -36,7 +40,7 @@ const metadata = {
 
   <Features2
     title="Nasze usługi"
-    subtitle="Kompleksowa obsługa marketingowa i technologiczna dla Twojego biznesu"
+    subtitle="Kompleksowa obsługa automatyzacyjna dla Twojego biznesu"
     columns={3}
     items={[
       {
@@ -97,24 +101,25 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
+    id="dlaczego-uczciweit"
     isReversed
     items={[
       {
-        title: 'Doświadczenie i certyfikaty',
+        title: 'U nas etyka to standard',
         description:
-          '16 lat doświadczenia w marketingu internetowym, certyfikowany Partner Google, własne projekty e-commerce - pracujesz z praktykami.',
+          'Brak umów terminowych. Zero kruczków prawnych - Umowy bez szkodliwych zapisów czy kar umownych. Pełna transparentność działań i partnerska komunikacja. ',
         icon: 'tabler:certificate',
       },
       {
         title: 'Indywidualne podejście',
         description:
-          'Każdy projekt dostosowujemy do specyfiki Twojego biznesu. Nie ma u nas "pakietów" - robimy to, co naprawdę przynosi efekty.',
+          'Każdy projekt dostosowujemy do specyfiki Twojego biznesu. Nie ma u nas "pakietów" - robimy to, co naprawdę przynosi efekty I poprawia wydajność Twojej pracy.',
         icon: 'tabler:user-check',
       },
       {
         title: 'Transparentność',
         description:
-          'Szczegółowe raporty z działań, stały dostęp do statystyk, pełna przejrzystość kosztów. Wiesz dokładnie, za co płacisz i jakie osiągasz rezultaty.',
+          'Szczegółowe raporty z działań. Wiesz dokładnie co robimy, w jakim czasie i z jakimi rezultatami. ',
         icon: 'tabler:eye-check',
       },
       {
@@ -125,8 +130,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Dlaczego my',
+      src: wspolpracaAutomatyzacja,
+      alt: 'Współpraca automatyzacja',
     }}
   >
     <Fragment slot="content">
@@ -146,19 +151,19 @@ const metadata = {
       {
         title: 'Oszczędność czasu',
         description:
-          'Automatyzacja procesów i sprawne działania marketingowe pozwalają Ci skupić się na rozwoju biznesu zamiast na rutynowych zadaniach.',
+          'Automatyzacja procesów pozwala Ci skupić się na rozwoju biznesu zamiast na rutynowych zadaniach.',
         icon: 'tabler:clock',
       },
       {
         title: 'Mierzalne rezultaty',
         description:
-          'Koncentrujemy się na efektach - zwiększenie ruchu, poprawa pozycji w Google, więcej konwersji. Wszystko mierzalne i udokumentowane.',
+          'Koncentrujemy się na efektach - zwiększenia wydajności procesu, obnienia jego kosztów lub eliminacji błędów. Wszystko mierzalne i udokumentowane.',
         icon: 'tabler:chart-arrows',
       },
       {
         title: 'Oszczędność kosztów',
         description:
-          'Automatyzacja redukuje koszty operacyjne, a efektywny marketing daje lepszy zwrot z inwestycji niż chaotyczne działania.',
+          'Automatyzacja redukuje koszty operacyjne, szięki czemu możesz bezpieczniej i wydajniej rozwijać swój biznes.',
         icon: 'tabler:coin',
       },
       {
@@ -169,8 +174,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Korzyści',
+      src: oszczednoscCzasuPieniedzy,
+      alt: 'Oszczędność czasu i pieniędzy',
     }}
   >
     <Fragment slot="content">
@@ -228,8 +233,9 @@ const metadata = {
         href: '/kontakt',
       },
       {
-        text: 'Zobacz więcej',
-        href: '/',
+        text: 'A może potrzebujesz zwiększyć widoczność swojej oferty? ',
+        href: 'https://uczciweseo.pl',
+        target: '_blank',
       },
     ]}
     title="Gotowy na zmiany w swoim biznesie?"
