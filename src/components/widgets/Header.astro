@@ -47,6 +47,30 @@ const {
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
+<!-- Top Contact Bar -->
+<div class="bg-primary-600 text-white py-2 px-3 md:px-6">
+  <div class="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 text-sm">
+    <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6">
+      <a href="tel:510442282" class="flex items-center gap-2 hover:text-primary-100 transition-colors">
+        <Icon name="tabler:phone" class="w-4 h-4" />
+        <span>510 442 282</span>
+      </a>
+      <a href="mailto:pomoc@uczciweit.pl" class="flex items-center gap-2 hover:text-primary-100 transition-colors">
+        <Icon name="tabler:mail" class="w-4 h-4" />
+        <span>pomoc@uczciweit.pl</span>
+      </a>
+    </div>
+    <a
+      href="https://tidycal.com/team/uczciweitpl-dzial-sprzedazowy/spotkanie-pierwsze"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-uczciweseo py-2 px-4 md:py-2.5 md:px-6 text-sm"
+    >
+      Pomóżcie w automatyzacji mojego biznesu
+    </a>
+  </div>
+</div>
+
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
