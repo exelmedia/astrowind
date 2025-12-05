@@ -2,10 +2,12 @@
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
-const { inputs, textarea, disclaimer, button = 'Contact us', description = '', action } = Astro.props;
+const { inputs, textarea, disclaimer, button = 'Wyślij wiadomość', description = '' } = Astro.props;
 ---
 
-<form action={action} method="POST">
+<form id="contact-form" class="contact-form">
+  <div id="form-message" class="hidden mb-4 p-4 rounded-lg"></div>
+
   {
     inputs &&
       inputs.map(
@@ -23,6 +25,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '', a
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
+                required={name === 'name' || name === 'email'}
                 class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
               />
             </div>
@@ -32,7 +35,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '', a
 
   {
     textarea && (
-      <div>
+      <div class="mb-6">
         <label for="textarea" class="block text-sm font-medium">
           {textarea.label}
         </label>
@@ -41,6 +44,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '', a
           name={textarea.name ? textarea.name : 'message'}
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
+          required
           class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
         />
       </div>
@@ -55,6 +59,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '', a
             id="disclaimer"
             name="disclaimer"
             type="checkbox"
+            required
             class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
           />
         </div>
@@ -85,3 +90,52 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '', a
     )
   }
 </form>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const messageDiv = document.getElementById('form-message') as HTMLDivElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      message: formData.get('message'),
+    };
+
+    // Show loading state
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Wysyłanie...';
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        messageDiv.className = 'mb-4 p-4 rounded-lg bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200';
+        messageDiv.textContent = 'Dziękujemy! Twoja wiadomość została wysłana. Odezwiemy się wkrótce.';
+        messageDiv.classList.remove('hidden');
+        form.reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      messageDiv.className = 'mb-4 p-4 rounded-lg bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200';
+      messageDiv.textContent = 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.';
+      messageDiv.classList.remove('hidden');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }
+  });
+</script>
