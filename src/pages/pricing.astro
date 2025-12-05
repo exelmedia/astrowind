@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Prices from '~/components/widgets/Pricing.astro';
@@ -11,6 +13,8 @@ const metadata = {
   title: 'Pricing',
 };
 ---
+export const prerender = true;
+
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->

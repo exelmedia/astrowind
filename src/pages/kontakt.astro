@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
@@ -9,6 +11,8 @@ const metadata = {
   description: 'Skontaktuj się z UczciweIT. Telefon: +48 510-442-282, Email: pomoc@uczciweit.pl. Oferujemy bezpłatną konsultację w zakresie automatyzacji procesów biznesowych, SEO i Google Ads.',
 };
 ---
+export const prerender = true;
+
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
@@ -41,7 +45,7 @@ const metadata = {
     }}
     disclaimer={{
       label:
-        'Informujemy, że dane osobowe przekazane za pośrednictwem formularza są przetwarzane przez EXELMEDIA sp. z o.o. z siedzibą w Warszawie, al. Solidarności 68/121, KRS: 0000535644, REGON: 360329184, NIP: 7543087865, Prezes Zarządu: Marcin Atamańczuk / Prokurent: Paweł Wencel, tel. 510442282, e-mail: pomoc@uczciweseo.pl Dane podane w formularzu rezerwacji konsultacji biznesowych, będą przetwarzane w celu video- spotkania oraz udzielenia odpowiedzi na przesłane zapytanie zgodnie z naszą Polityką Prywatności. Podanie przez Ciebie danych osobowych jest w pełni dobrowolne. Posiadasz prawo dostępu do treści swoich danych oraz prawo ich sprostowania, usunięcia, ograniczenia przetwarzania, posiadasz prawo do cofnięcia zgody w dowolnym momencie. W celu cofnięcia zgody możesz skontaktować się z nami wysyłając wiadomość e-mail na adres: pomoc@uczciweit.pl',
+        'Informujemy, że dane osobowe przekazane za pośrednictwem formularza są przetwarzane przez EXELMEDIA sp. z o.o. z siedzibą w Warszawie, al. Solidarności 68/121, KRS: 0000535644, REGON: 360329184, NIP: 7543087865, Prezes Zarządu: Marcin Atamańczuk / Prokurent: Paweł Wencel, tel. 510442282, e-mail: pomoc@uczciweit.pl Dane podane w formularzu rezerwacji konsultacji biznesowych, będą przetwarzane w celu video- spotkania oraz udzielenia odpowiedzi na przesłane zapytanie zgodnie z naszą Polityką Prywatności. Podanie przez Ciebie danych osobowych jest w pełni dobrowolne. Posiadasz prawo dostępu do treści swoich danych oraz prawo ich sprostowania, usunięcia, ograniczenia przetwarzania, posiadasz prawo do cofnięcia zgody w dowolnym momencie. W celu cofnięcia zgody możesz skontaktować się z nami wysyłając wiadomość e-mail na adres: pomoc@uczciweit.pl',
     }}
     description="Odpowiadamy zazwyczaj w ciągu 24 godzin roboczych."
   />

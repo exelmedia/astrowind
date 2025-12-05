@@ -10,6 +10,7 @@ import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
 import robotsTxt from 'astro-robots-txt';
+import vercel from '@astrojs/vercel/serverless';
 import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
@@ -23,7 +24,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  output: 'static',
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: { enabled: true }
+  }),
   site: 'https://uczciweit.pl',
 
   integrations: [

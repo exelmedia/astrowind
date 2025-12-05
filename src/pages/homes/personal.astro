@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import Layout from '~/layouts/PageLayout.astro';
 
 import Header from '~/components/widgets/Header.astro';
@@ -15,6 +17,8 @@ const metadata = {
   title: 'Personal Homepage Demo',
 };
 ---
+export const prerender = true;
+
 
 <Layout metadata={metadata}>
   <Fragment slot="announcement"></Fragment>

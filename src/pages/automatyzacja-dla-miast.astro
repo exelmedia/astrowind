@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import PageLayout from '~/layouts/PageLayout.astro';
 import { getAllCityPages } from '~/lib/cities';
 
@@ -7,6 +9,8 @@ const cities = getAllCityPages();
 // Sort cities alphabetically by name
 const sortedCities = cities.sort((a, b) => a.miasto.localeCompare(b.miasto, 'pl'));
 ---
+export const prerender = true;
+
 
 <PageLayout
   metadata={{
