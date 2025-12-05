@@ -9,6 +9,7 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
+import robotsTxt from 'astro-robots-txt';
 import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
@@ -17,18 +18,20 @@ import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehype
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const hasExternalScripts = false;
+const hasExternalScripts = true;
 const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
   output: 'static',
+  site: 'https://uczciweit.pl',
 
   integrations: [
     tailwind({
       applyBaseStyles: false,
     }),
     sitemap(),
+    robotsTxt(),
     mdx(),
     icon({
       include: {
