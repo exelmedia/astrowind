@@ -19,8 +19,8 @@ export const POST: APIRoute = async ({ request }) => {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'Formularz kontaktowy <noreply@uczciweit.pl>',
-      to: 'pomoc@uczciweseo.pl',
-      reply_to: email,
+      to: 'pomoc@uczciweit.pl',
+      replyTo: email,
       subject: `Nowa wiadomość od ${name}`,
       html: `
         <h2>Nowa wiadomość z formularza kontaktowego</h2>
