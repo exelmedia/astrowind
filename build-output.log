@@ -1,0 +1,214 @@
+
+> @onwidget/astrowind@1.0.0-beta.52 prebuild
+> node scripts/convert-csv-to-json.js
+
+✅ Converted 70 cities from CSV to JSON
+📄 Output: /Users/marcinatamanczuk/Documents/ASTRO/astrowind/data/cities.json
+
+> @onwidget/astrowind@1.0.0-beta.52 build
+> astro build
+
+14:54:13 [astrowind] Astrowind `./src/config.yaml` has been loaded.
+14:54:13 [content] Syncing content
+14:54:13 [content] Synced content
+14:54:13 [types] Generated 188ms
+14:54:13 [build] output: "static"
+14:54:13 [build] mode: "static"
+14:54:13 [build] directory: /Users/marcinatamanczuk/Documents/ASTRO/astrowind/dist/
+14:54:13 [build] Collecting build info...
+14:54:13 [build] ✓ Completed in 237ms.
+14:54:13 [build] Building static entrypoints...
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+14:54:15 [vite] ✓ built in 1.52s
+14:54:15 [build] ✓ Completed in 1.54s.
+
+ building client (vite) 
+14:54:15 [vite] transforming...
+14:54:15 [vite] ✓ 16 modules transformed.
+14:54:15 [vite] rendering chunks...
+14:54:15 [vite] computing gzip size...
+14:54:15 [vite] dist/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DZnDNxNb.js  14.84 kB │ gzip: 5.08 kB
+14:54:15 [vite] ✓ built in 35ms
+
+ generating static routes 
+14:54:15 ▶ src/pages/404.astro
+14:54:15   └─ /404.html (+6ms) 
+14:54:15 ▶ src/pages/automatyzacja-dla-miast.astro
+14:54:15   └─ /automatyzacja-dla-miast/index.html (+7ms) 
+14:54:15 ▶ src/pages/homes/mobile-app.astro
+14:54:15   └─ /homes/mobile-app/index.html (+13ms) 
+14:54:15 ▶ src/pages/homes/personal.astro
+14:54:15   └─ /homes/personal/index.html (+659ms) 
+14:54:15 ▶ src/pages/homes/saas.astro
+14:54:15   └─ /homes/saas/index.html (+255ms) 
+14:54:16 ▶ src/pages/homes/startup.astro
+14:54:16   └─ /homes/startup/index.html (+148ms) 
+14:54:16 ▶ src/pages/kontakt.astro
+14:54:16   └─ /kontakt/index.html (+3ms) 
+14:54:16 ▶ src/pages/landing/click-through.astro
+14:54:16   └─ /landing/click-through/index.html (+2ms) 
+14:54:16 ▶ src/pages/landing/lead-generation.astro
+14:54:16   └─ /landing/lead-generation/index.html (+3ms) 
+14:54:16 ▶ src/pages/landing/pre-launch.astro
+14:54:16   └─ /landing/pre-launch/index.html (+2ms) 
+14:54:16 ▶ src/pages/landing/product.astro
+14:54:16   └─ /landing/product/index.html (+2ms) 
+14:54:16 ▶ src/pages/landing/sales.astro
+14:54:16   └─ /landing/sales/index.html (+6ms) 
+14:54:16 ▶ src/pages/landing/subscription.astro
+14:54:16   └─ /landing/subscription/index.html (+2ms) 
+14:54:16 ▶ src/pages/o-nas.astro
+14:54:16   └─ /o-nas/index.html (+2ms) 
+14:54:16 ▶ src/pages/polityka-prywatnosci.md
+14:54:16   └─ /polityka-prywatnosci/index.html (+1ms) 
+14:54:16 ▶ src/pages/pricing.astro
+14:54:16   └─ /pricing/index.html (+3ms) 
+14:54:16 ▶ src/pages/regulamin.md
+14:54:16   └─ /regulamin/index.html (+1ms) 
+14:54:16 λ src/pages/rss.xml.ts
+14:54:16   └─ /rss.xml (+2ms) 
+14:54:16 ▶ src/pages/uslugi.astro
+14:54:16   └─ /uslugi/index.html (+3ms) 
+14:54:16 ▶ src/pages/[city].astro
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-biala-podlaska/index.html (+3ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-bialystok/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-bielsko-biala/index.html (+2ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-bydgoszcz/index.html (+2ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-bytom/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-chelm/index.html (+2ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-chorzow/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-czestochowa/index.html (+2ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-dabrowa-gornicza/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-elblag/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-gdansk/index.html (+3ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-gdynia/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-gliwice/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-glucholazy/index.html (+2ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-gorzow-wielkopolski/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-grudziadz/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-jaworzno/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-jelenia-gora/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-kalisz/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-katowice/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-kedzierzyn-kozle/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-kielce/index.html (+2ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-kluczbork/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-konin/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-koszalin/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-krakow/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-krapkowice/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-legnica/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-leszno/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-lublin/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-lomza/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-lodz/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-myslowice/index.html (+2ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-namyslow/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-nowy-sacz/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-nysa/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-olsztyn/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-opole/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-ostroleka/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-pila/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-piotrkow-trybunalski/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-plock/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-prudnik/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-przemysl/index.html (+2ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-radom/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-ruda-slaska/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-rybnik/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-rzeszow/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-siedlce/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-sieradz/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-skierniewice/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-slupsk/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-sopot/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-sosnowiec/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-strzelce-opolskie/index.html (+3ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-suwalki/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-szczecin/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-swietochlowice/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-swinoujscie/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-tarnobrzeg/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-tarnowskie-gory/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-tarnow/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-torun/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-tychy/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-warszawa/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-wloclawek/index.html (+2ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-wroclaw/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-zabrze/index.html (+1ms) 
+14:54:16   ├─ /automatyzacja-procesow-biznesowych-zamosc/index.html (+1ms) 
+14:54:16   └─ /automatyzacja-procesow-biznesowych-zielona-gora/index.html (+1ms) 
+14:54:16 ▶ src/pages/[...blog]/[category]/[...page].astro
+14:54:16   └─ /category/automatyzacja-systemow/index.html (+121ms) 
+14:54:16 ▶ src/pages/[...blog]/[tag]/[...page].astro
+14:54:16   ├─ /tag/chat-gpt/index.html (+137ms) 
+14:54:16   └─ /tag/manus/index.html (+123ms) 
+14:54:16 ▶ src/pages/[...blog]/[...page].astro
+14:54:16   └─ /blog/index.html (+262ms) 
+14:54:17 ▶ src/pages/index.astro
+14:54:17   └─ /index.html (+129ms) 
+14:54:17 ▶ src/pages/[...blog]/index.astro
+14:54:17   ├─ /sztuczna/index.html (+236ms) 
+14:54:17   ├─ /test1/index.html (+151ms) 
+14:54:17   ├─ /trendyai2025/index.html (+241ms) 
+14:54:17   ├─ /wybor_systemow/index.html (+144ms) 
+14:54:18   └─ /artykul/index.html (+244ms) 
+14:54:18 ✓ Completed in 3.22s.
+
+ generating optimized images 
+14:54:18   ▶ /_astro/logo-negative.Dg9EKu5l_1AdhGU.svg (reused cache entry) (+3ms) (1/40)
+14:54:18   ▶ /_astro/google-play.ISTMcpLO_1CKpdk.webp (reused cache entry) (+3ms) (2/40)
+14:54:18   ▶ /_astro/visa-6850402_1280_ZQnnNP.webp (reused cache entry) (+3ms) (3/40)
+14:54:18   ▶ /_astro/default.B97J9PSv_ZHWiVO.jpg (reused cache entry) (+3ms) (4/40)
+14:54:18   ▶ /_astro/app-store.t3tG4Jz3_1LXLgY.webp (reused cache entry) (+3ms) (5/40)
+14:54:18   ▶ /_astro/microsoft-80658_1280_1XUlCp.webp (reused cache entry) (+3ms) (6/40)
+14:54:18   ▶ /_astro/paypal-784404_1280_Z1McU4b.webp (reused cache entry) (+3ms) (7/40)
+14:54:18   ▶ /_astro/icon-720944_1280_1zPje7.webp (reused cache entry) (+3ms) (8/40)
+14:54:18   ▶ /_astro/logo.DHs-pUiY_1AdhGU.svg (reused cache entry) (+3ms) (9/40)
+14:54:18   ▶ /_astro/ebay-189064_1280_ZXemlk.webp (reused cache entry) (+3ms) (10/40)
+14:54:18   ▶ /_astro/node-js-736399_1280_ZOCA0K.webp (reused cache entry) (+3ms) (11/40)
+14:54:18   ▶ /_astro/google-1015751_1280_1jmu5x.webp (reused cache entry) (+4ms) (12/40)
+14:54:18   ▶ /_astro/google-play.ISTMcpLO_NRqQY.webp (reused cache entry) (+1ms) (13/40)
+14:54:18   ▶ /_astro/logo-negative.Dg9EKu5l_2uIdyc.svg (reused cache entry) (+1ms) (14/40)
+14:54:18   ▶ /_astro/visa-6850402_1280_Z1XBFPc.webp (reused cache entry) (+2ms) (15/40)
+14:54:18   ▶ /_astro/app-store.t3tG4Jz3_Z1uhf1F.webp (reused cache entry) (+2ms) (16/40)
+14:54:18   ▶ /_astro/microsoft-80658_1280_QG3B3.webp (reused cache entry) (+2ms) (17/40)
+14:54:18   ▶ /_astro/yahoo-76684_1280_ZUHDsC.webp (reused cache entry) (+2ms) (18/40)
+14:54:18   ▶ /_astro/paypal-784404_1280_2aJUIo.webp (reused cache entry) (+2ms) (19/40)
+14:54:18   ▶ /_astro/icon-720944_1280_sB1cK.webp (reused cache entry) (+2ms) (20/40)
+14:54:18   ▶ /_astro/node-js-736399_1280_hAH0B.webp (reused cache entry) (+2ms) (21/40)
+14:54:18   ▶ /_astro/ebay-189064_1280_8YUF2.webp (reused cache entry) (+2ms) (22/40)
+14:54:18   ▶ /_astro/logo.DHs-pUiY_2uIdyc.svg (reused cache entry) (+2ms) (23/40)
+14:54:18   ▶ /_astro/meta-6850393_1280_7DuDl.webp (reused cache entry) (+1ms) (24/40)
+14:54:18   ▶ /_astro/google-1015751_1280_c8c4b.webp (reused cache entry) (+1ms) (25/40)
+14:54:18   ▶ /_astro/content-2.DPAto01O_ZDPKYA.webp (reused cache entry) (+1ms) (26/40)
+14:54:18   ▶ /_astro/yahoo-76684_1280_bvDxJ.webp (reused cache entry) (+1ms) (27/40)
+14:54:18   ▶ /_astro/content-4.BskjUdtQ_ZGHTrR.webp (reused cache entry) (+1ms) (28/40)
+14:54:18   ▶ /_astro/content-1.B2pbTYlU_Z1tac45.webp (reused cache entry) (+1ms) (29/40)
+14:54:18   ▶ /_astro/content-3.DBqZEKS5_2mkrgl.webp (reused cache entry) (+1ms) (30/40)
+14:54:18   ▶ /_astro/hero-banner.DWPMO1-d_2nElXh.webp (reused cache entry) (+1ms) (31/40)
+14:54:18   ▶ /_astro/meta-6850393_1280_ZYzMn1.webp (reused cache entry) (+1ms) (32/40)
+14:54:18   ▶ /_astro/content-2.DPAto01O_1DVube.webp (reused cache entry) (+1ms) (33/40)
+14:54:18   ▶ /_astro/content-1.B2pbTYlU_OC46J.webp (reused cache entry) (+1ms) (34/40)
+14:54:18   ▶ /_astro/content-4.BskjUdtQ_Z1Nb2ig.webp (reused cache entry) (+1ms) (35/40)
+14:54:18   ▶ /_astro/content-3.DBqZEKS5_Zp4qmL.webp (reused cache entry) (+1ms) (36/40)
+14:54:18   ▶ /_astro/hero-banner.DWPMO1-d_ab3pF.webp (reused cache entry) (+1ms) (37/40)
+14:54:18   ▶ /_astro/hero-banner.DWPMO1-d_1obFoV.webp (reused cache entry) (+0ms) (38/40)
+14:54:18   ▶ /_astro/hero-banner.DWPMO1-d_jCR6g.webp (reused cache entry) (+0ms) (39/40)
+14:54:18   ▶ /_astro/hero-banner.DWPMO1-d_1mUjYe.webp (reused cache entry) (+0ms) (40/40)
+14:54:18 ✓ Completed in 8ms.
+
+14:54:18 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+[32mastro-robots-txt:[0m `robots.txt` is created.
+
+✓ Successfully compressed a total of 2 CSS files for 656 Bytes.
+14:54:21 [build] Waiting for integration "astro-compress", hook "astro:build:done"...
+✓ Successfully compressed a total of 99 HTML files for 483.18 KB.
+✓ Successfully compressed a total of 4 JavaScript files for 147 Bytes.
+14:54:22 [astrowind] Updating `robots.txt` with `sitemap-index.xml` ...
+14:54:22 [build] 98 page(s) built in 8.80s
+14:54:22 [build] Complete!
