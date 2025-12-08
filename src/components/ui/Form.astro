@@ -13,9 +13,9 @@ const { inputs, textarea, disclaimer, button = 'Wyślij wiadomość', descriptio
       inputs.map(
         ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
           name && (
-            <div class="mb-6">
+            <div class="mb-4">
               {label && (
-                <label for={name} class="block text-sm font-medium">
+                <label for={name} class="block text-sm font-medium mb-1">
                   {label}
                 </label>
               )}
@@ -26,7 +26,7 @@ const { inputs, textarea, disclaimer, button = 'Wyślij wiadomość', descriptio
                 autocomplete={autocomplete}
                 placeholder={placeholder}
                 required={name === 'name' || name === 'email'}
-                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                class="py-2 px-3 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
               />
             </div>
           )
@@ -35,17 +35,17 @@ const { inputs, textarea, disclaimer, button = 'Wyślij wiadomość', descriptio
 
   {
     textarea && (
-      <div class="mb-6">
-        <label for="textarea" class="block text-sm font-medium">
+      <div class="mb-4">
+        <label for="textarea" class="block text-sm font-medium mb-1">
           {textarea.label}
         </label>
         <textarea
           id="textarea"
           name={textarea.name ? textarea.name : 'message'}
-          rows={textarea.rows ? textarea.rows : 4}
+          rows={textarea.rows ? textarea.rows : 3}
           placeholder={textarea.placeholder}
           required
-          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          class="py-2 px-3 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
         />
       </div>
     )
@@ -60,7 +60,7 @@ const { inputs, textarea, disclaimer, button = 'Wyślij wiadomość', descriptio
             name="disclaimer"
             type="checkbox"
             required
-            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            class="cursor-pointer h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-primary focus:ring-primary dark:bg-slate-800 dark:checked:bg-primary"
           />
         </div>
         <div class="ml-3">
@@ -74,7 +74,7 @@ const { inputs, textarea, disclaimer, button = 'Wyślij wiadomość', descriptio
 
   {
     button && (
-      <div class="mt-10 grid">
+      <div class="mt-6 grid">
         <Button variant="primary" type="submit">
           {button}
         </Button>
@@ -84,7 +84,7 @@ const { inputs, textarea, disclaimer, button = 'Wyślij wiadomość', descriptio
 
   {
     description && (
-      <div class="mt-3 text-center">
+      <div class="mt-2 text-center">
         <p class="text-sm text-gray-600 dark:text-gray-400">{description}</p>
       </div>
     )
@@ -94,6 +94,79 @@ const { inputs, textarea, disclaimer, button = 'Wyślij wiadomość', descriptio
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const messageDiv = document.getElementById('form-message') as HTMLDivElement;
+
+  // Set custom Polish validation messages
+  if (form) {
+    const nameInput = form.querySelector('input[name="name"]') as HTMLInputElement;
+    const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement;
+    const phoneInput = form.querySelector('input[name="phone"]') as HTMLInputElement;
+    const messageInput = form.querySelector('textarea[name="message"]') as HTMLTextAreaElement;
+    const disclaimerInput = form.querySelector('input[name="disclaimer"]') as HTMLInputElement;
+
+    // Polish validation messages for name
+    if (nameInput) {
+      nameInput.addEventListener('invalid', () => {
+        if (nameInput.validity.valueMissing) {
+          nameInput.setCustomValidity('Proszę podać imię i nazwisko.');
+        }
+      });
+      nameInput.addEventListener('input', () => {
+        nameInput.setCustomValidity('');
+      });
+    }
+
+    // Polish validation messages for email
+    if (emailInput) {
+      emailInput.addEventListener('invalid', () => {
+        if (emailInput.validity.valueMissing) {
+          emailInput.setCustomValidity('Proszę podać adres e-mail.');
+        } else if (emailInput.validity.typeMismatch) {
+          emailInput.setCustomValidity('Proszę podać prawidłowy adres e-mail.');
+        }
+      });
+      emailInput.addEventListener('input', () => {
+        emailInput.setCustomValidity('');
+      });
+    }
+
+    // Polish validation messages for phone (optional field)
+    if (phoneInput) {
+      phoneInput.addEventListener('invalid', () => {
+        if (phoneInput.validity.valueMissing) {
+          phoneInput.setCustomValidity('Proszę podać numer telefonu.');
+        } else if (phoneInput.validity.typeMismatch) {
+          phoneInput.setCustomValidity('Proszę podać prawidłowy numer telefonu.');
+        }
+      });
+      phoneInput.addEventListener('input', () => {
+        phoneInput.setCustomValidity('');
+      });
+    }
+
+    // Polish validation messages for message
+    if (messageInput) {
+      messageInput.addEventListener('invalid', () => {
+        if (messageInput.validity.valueMissing) {
+          messageInput.setCustomValidity('Proszę wpisać wiadomość.');
+        }
+      });
+      messageInput.addEventListener('input', () => {
+        messageInput.setCustomValidity('');
+      });
+    }
+
+    // Polish validation messages for disclaimer checkbox
+    if (disclaimerInput) {
+      disclaimerInput.addEventListener('invalid', () => {
+        if (disclaimerInput.validity.valueMissing) {
+          disclaimerInput.setCustomValidity('Proszę zaakceptować warunki przetwarzania danych osobowych.');
+        }
+      });
+      disclaimerInput.addEventListener('change', () => {
+        disclaimerInput.setCustomValidity('');
+      });
+    }
+  }
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
