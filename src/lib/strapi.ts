@@ -197,14 +197,14 @@ export function getOptimizedImageUrl(image: { formats?: { medium?: { url: string
 }
 
 /**
- * Convert Strapi Blocks format to HTML
+ * Convert Strapi Blocks format to HTML with optional CTA injection
  */
-export function blocksToHtml(blocks: any): string {
+export function blocksToHtml(blocks: any, injectCTA: boolean = true): string {
   if (!blocks || !Array.isArray(blocks)) {
     return typeof blocks === 'string' ? blocks : '';
   }
 
-  return blocks.map((block: any) => {
+  const htmlBlocks = blocks.map((block: any) => {
     switch (block.type) {
       case 'paragraph':
         const paragraphContent = block.children?.map((child: any) => formatTextNode(child)).join('') || '';
@@ -217,7 +217,7 @@ export function blocksToHtml(blocks: any): string {
 
       case 'list':
         const listTag = block.format === 'ordered' ? 'ol' : 'ul';
-        const listItems = block.children?.map((child: any) => blocksToHtml([child])).join('') || '';
+        const listItems = block.children?.map((child: any) => blocksToHtml([child], false)).join('') || '';
         return `<${listTag}>${listItems}</${listTag}>`;
 
       case 'list-item':
@@ -248,7 +248,39 @@ export function blocksToHtml(blocks: any): string {
         }
         return '';
     }
-  }).join('\n');
+  });
+
+  // Inject CTA in the middle of the content (after ~40% of paragraphs)
+  if (injectCTA && htmlBlocks.length > 6) {
+    const ctaPosition = Math.floor(htmlBlocks.length * 0.4);
+    const ctaHtml = `
+      <div class="not-prose my-8 p-6 bg-gradient-to-r from-[#2b9e40]/10 to-[#0b74b5]/10 dark:from-[#2b9e40]/20 dark:to-[#0b74b5]/20 rounded-xl border-2 border-[#2b9e40]/30 dark:border-[#2b9e40]/40">
+        <div class="text-center">
+          <p class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+            Potrzebujesz pomocy w automatyzacji procesów?
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a href="tel:+48510442282" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-white bg-[#2b9e40] hover:bg-[#238a36] rounded-full transition-all duration-200 hover:shadow-lg hover:scale-105">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              510 442 282
+            </a>
+            <a href="mailto:pomoc@uczciweit.pl" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-2 border-[#2b9e40] rounded-full transition-all duration-200 hover:shadow-lg hover:scale-105">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              pomoc@uczciweit.pl
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+    htmlBlocks.splice(ctaPosition, 0, ctaHtml);
+  }
+
+  return htmlBlocks.join('\n');
 }
 
 /**

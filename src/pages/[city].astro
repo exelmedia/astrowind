@@ -7,7 +7,15 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Note from '~/components/widgets/Note.astro';
 import { getAllCityPages, type CityPage } from '~/lib/cities';
+import { Image } from 'astro:assets';
+import automatyzacja1 from '~/assets/images/automatyzacja1.jpg';
+import automatyzacja2 from '~/assets/images/automatyzacja2.jpg';
+import automatyzacja3 from '~/assets/images/automatyzacja3.jpg';
 
 export const getStaticPaths: GetStaticPaths = () => {
   const cities = getAllCityPages();
@@ -44,38 +52,124 @@ const { cityData } = Astro.props;
     </Fragment>
 
     <Fragment slot="subtitle">
-      Unikalne warunki współpracy przy automatyzacji procesów Twojej firmy w <strong>{ cityData['miasto-odmienione'] }</strong>.
-      Nasze usługi automatyzacji opierają się na uczciwych zasadach.
+      Pomożemy Twojej firmie w <strong>{ cityData['miasto-odmienione'] }</strong> zaoszczędzić czas i pieniądze dzięki automatyzacji powtarzalnych zadań.
+      Zautomatyzuj procesy marketingowe, sprzedażowe i administracyjne - skup się na rozwoju biznesu zamiast na rutynowych czynnościach.
     </Fragment>
   </Hero>
 
-  <!-- Content Section -->
-  <Content
-    title="Czym jest automatyzacja procesów biznesowych?"
-    subtitle={`Kompleksowe rozwiązania dla firm w ${cityData['miasto-odmienione']}`}
+  <!-- Zdjęcie 1 -->
+  <section class="px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl -mt-16 mb-8">
+    <Image
+      src={automatyzacja1}
+      alt="Automatyzacja procesów biznesowych"
+      width={1200}
+      height={600}
+      class="w-full rounded-lg shadow-lg"
+      loading="eager"
+    />
+  </section>
+
+  <!-- Co możemy zautomatyzować -->
+  <Features2
+    title="Co możemy zautomatyzować w Twojej firmie?"
+    subtitle={`Kompleksowe rozwiązania dla przedsiębiorców z ${cityData['miasto-odmienione']}`}
+    columns={3}
     items={[
       {
-        title: 'Automatyzacja marketingu',
-        description: `Zwiększ efektywność kampanii marketingowych Twojej firmy w ${cityData['miasto-odmienione']}. Automatyzujemy e-mail marketing, social media, lead nurturing i więcej.`,
+        title: 'Email marketing i komunikacja',
+        description: 'Automatyczne kampanie mailingowe, segmentacja klientów, personalizowane wiadomości, follow-up po zakupie, newslettery.',
+        icon: 'tabler:mail',
       },
       {
-        title: 'Automatyzacja e-commerce',
-        description: `Usprawnij zarządzanie sklepem internetowym - od obsługi zamówień, przez fakturowanie, aż po komunikację z klientami w ${cityData['miasto-odmienione']}.`,
+        title: 'Procesy sprzedażowe',
+        description: 'Automatyczne generowanie ofert, fakturowanie, przypomnienia o płatnościach, obsługa zamówień, CRM.',
+        icon: 'tabler:shopping-cart',
       },
       {
-        title: 'Automatyzacja procesów',
-        description: `Zautomatyzuj powtarzalne zadania w Twojej firmie. Oszczędzaj czas i redukuj błędy dzięki inteligentnym rozwiązaniom dostosowanym do potrzeb firm z ${cityData['miasto-odmienione']}.`,
+        title: 'Social media',
+        description: 'Planowanie postów, automatyczne publikacje, monitoring wzmianek, analiza konkurencji, raportowanie wyników.',
+        icon: 'tabler:brand-facebook',
+      },
+      {
+        title: 'E-commerce',
+        description: 'Synchronizacja Allegro z magazynem, aktualizacja stanów, generowanie plików XML, integracja z ERP (COMARCH OPTIMA).',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'Dokumenty i faktury',
+        description: 'OCR faktur, automatyczne księgowanie, wyciąganie danych z PDF-ów, archiwizacja dokumentów, generowanie raportów.',
+        icon: 'tabler:file-invoice',
+      },
+      {
+        title: 'Pozyskiwanie danych',
+        description: 'Web scraping, budowanie baz kontaktów B2B, monitoring konkurencji, zbieranie ofert, analiza rynku.',
+        icon: 'tabler:database-import',
+      },
+      {
+        title: 'Integracje systemów',
+        description: 'Łączenie różnych narzędzi (Slack, Google Sheets, CRM, ERP), synchronizacja danych, webhooks, API.',
+        icon: 'tabler:plug',
+      },
+      {
+        title: 'Raporty i analityka',
+        description: 'Automatyczne dashboardy, raporty sprzedażowe, KPI, monitorowanie wyników, powiadomienia o anomaliach.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Obsługa klienta',
+        description: 'Chatboty, automatyczne odpowiedzi FAQ, ticket system, eskalacja zapytań, ankiety satysfakcji.',
+        icon: 'tabler:headset',
+      },
+    ]}
+  />
+
+  <!-- Konkretne przykłady automatyzacji -->
+  <Content
+    title="Przykłady automatyzacji za pomocą AI, które wdrażaliśmy"
+    subtitle={`Sprawdzone rozwiązania dla firm z ${cityData['miasto-odmienione']}`}
+    isReversed
+    items={[
+      {
+        title: 'Automatyzacja sklepu e-commerce',
+        description: 'Synchronizacja Allegro z magazynem, automatyczne wystawianie faktur, generowanie plików XML dla porównywarek cenowych, powiadomienia o niskich stanach.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Kampanie email marketingowe',
+        description: 'Automatyczne serie powitalne dla nowych klientów, remarketing po porzuconym koszyku, personalizowane rekomendacje produktów, segmentacja według zachowań.',
+        icon: 'tabler:mail-bolt',
+      },
+      {
+        title: 'Lead generation B2B',
+        description: 'Web scraping stron firm, budowanie baz kontaktów decyzyjnych, wzbogacanie danych o email/telefon, automatyczne cold mailing z follow-upem.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Fakturowanie i księgowość',
+        description: 'OCR faktur kosztowych, automatyczne księgowanie do systemu, powiadomienie o terminach płatności, przygotowanie do wdrożenia KSEFu.',
+        icon: 'tabler:receipt',
       },
     ]}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Dedykowane rozwiązania dla {cityData.miasto}
+        Realne case studies
       </h3>
       <p>
-        Oferujemy kompleksowe usługi automatyzacji dla firm działających w {cityData['miasto-odmienione']} i okolicach.
-        Niezależnie od branży i wielkości firmy, pomożemy Ci usprawnić procesy biznesowe.
+        To nie są abstrakcyjne pomysły - to konkretne automatyzacje, które wdrożyliśmy u naszych klientów.
+        Każde z tych rozwiązań realnie oszczędza czas i pieniądze.
       </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <Image
+        src={automatyzacja2}
+        alt="Przykłady automatyzacji za pomocą AI"
+        width={1200}
+        height={600}
+        class="w-full rounded-lg shadow-lg"
+        loading="lazy"
+      />
     </Fragment>
 
     <Fragment slot="bg">
@@ -83,41 +177,164 @@ const { cityData } = Astro.props;
     </Fragment>
   </Content>
 
-  <!-- Features Section -->
+  <!-- Korzyści z automatyzacji -->
+  <Content
+    isAfterContent
+    title="Dlaczego warto zautomatyzować procesy w firmie?"
+    items={[
+      {
+        title: 'Oszczędność czasu - nawet 80%',
+        description: 'Typowe zadania jak wysyłanie faktur, aktualizacja ofert czy generowanie raportów mogą być w pełni zautomatyzowane. To oznacza dziesiątki godzin miesięcznie oszczędzone dla Ciebie i Twoich pracowników.',
+        icon: 'tabler:clock-bolt',
+      },
+      {
+        title: 'Redukcja kosztów operacyjnych',
+        description: 'Mniej czasu na rutynowe zadania = niższe koszty pracy. Jeden pracownik może obsłużyć więcej procesów. Typowy ROI automatyzacji to 6-12 miesięcy.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Eliminacja błędów ludzkich',
+        description: 'Automatyzacja nie robi literówek w fakturach, nie zapomina o mailach follow-up i nie pomija pozycji w raportach. Twoje procesy stają się bardziej niezawodne.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Skalowalność biznesu',
+        description: 'Zautomatyzowane procesy działają 24/7 i radzą sobie z dowolnym wolumenem zamówień. Możesz rosnąć bez proporcjonalnego zwiększania kosztów operacyjnych.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Lepsza obsługa klienta',
+        description: 'Automatyczne powiadomienia, szybsze odpowiedzi, brak opóźnień w wysyłce - Twoi klienci docenią profesjonalizm i niezawodność.',
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: 'Więcej czasu na strategię',
+        description: 'Gdy rutynowe zadania działają same, możesz skupić się na rozwoju firmy, akwizycji klientów i optymalizacji procesów biznesowych.',
+        icon: 'tabler:brain',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Mierzalne korzyści
+      </h3>
+      <p>
+        Automatyzacja to nie abstrakcyjne prace - to konkretne oszczędności czasu i pieniędzy,
+        które możesz policzyć w godzinach i złotówkach.
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <Image
+        src={automatyzacja3}
+        alt="Korzyści z automatyzacji procesów biznesowych"
+        width={1200}
+        height={600}
+        class="w-full rounded-lg shadow-lg"
+        loading="lazy"
+      />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Filozofia -->
+  <Note icon="tabler:info-square">
+    <Fragment slot="title">Nasza filozofia:</Fragment>
+    <Fragment slot="description">Uczciwa współpraca WIN-WIN bez długofalowych zobowiązań</Fragment>
+  </Note>
+
+  <!-- Branże -->
   <Features3
-    title={`Nasze usługi w ${cityData['miasto-odmienione']}`}
-    subtitle="Co możemy zautomatyzować w Twojej firmie?"
+    title={`Automatyzacja AI dla różnych branż w ${cityData['miasto-odmienione']}`}
+    subtitle="Nasze rozwiązania sprawdzają się w wielu sektorach"
     columns={3}
     items={[
       {
-        title: 'Procesy marketingowe',
-        description: 'Email marketing, social media, kampanie reklamowe, analytics',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Procesy sprzedażowe',
-        description: 'CRM, lead generation, obsługa klienta, fakturowanie',
+        title: 'E-commerce i handel',
+        description: 'Automatyzacja magazynu, synchronizacja platform sprzedażowych, fakturowanie, obsługa zwrotów, remarketing.',
         icon: 'tabler:shopping-cart',
       },
       {
-        title: 'Procesy biznesowe',
-        description: 'Workflow, dokumenty, raporty, integracje systemów',
-        icon: 'tabler:briefcase',
+        title: 'Usługi B2B',
+        description: 'CRM, automatyczne oferty, follow-up z klientami, fakturowanie cykliczne, raportowanie dla klienta.',
+        icon: 'tabler:building',
       },
       {
-        title: 'E-commerce',
-        description: 'Sklepy online, zarządzanie magazynem, synchronizacja platform',
-        icon: 'tabler:building-store',
+        title: 'Marketing i agencje',
+        description: 'Raportowanie dla klientów, social media scheduling, email campaigns, lead nurturing, analytics.',
+        icon: 'tabler:chart-dots',
       },
       {
-        title: 'Analityka i raporty',
-        description: 'Dashboardy, KPI, raporty automatyczne, monitoringi',
-        icon: 'tabler:chart-bar',
+        title: 'Księgowość i finanse',
+        description: 'OCR faktur, automatyczne księgowanie, powiadomienia o płatnościach, generowanie deklaracji, archiwizacja.',
+        icon: 'tabler:calculator',
       },
       {
-        title: 'Integracje',
-        description: 'API, webhooks, synchronizacja danych między systemami',
-        icon: 'tabler:plug',
+        title: 'Produkcja i magazyn',
+        description: 'Zarządzanie stanami, zlecenia produkcyjne, integracja z ERP, śledzenie dostaw, kontrola jakości.',
+        icon: 'tabler:forklift',
+      },
+      {
+        title: 'Nieruchomości',
+        description: 'Lead generation z portali, automatyczne odpowiedzi na zapytania, kalendarz pokazów, CRM, oferty dla klientów.',
+        icon: 'tabler:home',
+      },
+    ]}
+  />
+
+  <!-- Referencje -->
+  <Testimonials
+    title="Opinie naszych klientów"
+    subtitle="Sprawdź, co mówią o nas firmy, które zautomatyzowały swoje procesy"
+    testimonials={[
+      {
+        testimonial: `Czuję, że robią konkretną robotę i jeśli gdzieś roboty robi się mniej (zrobiliśmy wystarczająco w danej chwili) – pytają się, gdzie przesunąć dany budżet, by lepiej wszystko funkcjonowało. Polecam!`,
+        name: 'Artem Rusin',
+        job: 'Biurodlamisia.pl',
+      },
+      {
+        testimonial: `Jestem bardzo zadowolony ze współpracy z firmą EXELMEDIA i życzyłbym sobie więcej tak dobrze współpracujących firm i osób w nich pracujących.`,
+        name: 'Dariusz Urbaś',
+        job: 'Budmater.pl',
+      },
+      {
+        testimonial: `Doskonali specjaliści, na których można polegać. Dziękuję za dotychczasową współpracę i liczę na więcej.`,
+        name: 'Przemysław Kutnyj',
+        job: 'Przemysławkutnyj.pl',
+      },
+    ]}
+  />
+
+  <!-- FAQ -->
+  <FAQs
+    title={`Najczęściej zadawane pytania o automatyzację procesów biznesowych w ${cityData['miasto-odmienione']}`}
+    items={[
+      {
+        title: 'Ile kosztuje automatyzacja procesów biznesowych?',
+        description: 'Koszt zależy od zakresu projektu i zasobów, które musimy na niego przeznaczyć. Każda automatyzacja wyceniana jest osobno na podstawie audytu przedofertowego, który opracujemy dla Ciebie bezpłatnie po pierwszej rozmowie kwalifikacyjnej w procesie sprzedażowym. Kwota wdrożenia automatyzacji bazuje na naszej polityce cenowej, którą przedstawimy Ci w procesie sprzedażowym.',
+      },
+      {
+        title: 'Jak długo trwa wdrożenie automatyzacji?',
+        description: 'Proste automatyzacje (np. email marketing, synchronizacja danych) - 2-4 tygodnie. Średnio zaawansowane (np. integracja sklepu z magazynem) - 1-2 miesiące. Złożone systemy (wielosystemowe integracje) - 2-4 miesiące. Zawsze działamy etapami - najpierw realizujemy szybkie wygrane (quick wins).',
+      },
+      {
+        title: 'Czy będę potrzebować długoterminowej umowy?',
+        description: 'Nie - działamy bez umów terminowych i kar umownych. Wdrożenie płatne jednorazowo, wsparcie opcjonalne. Możesz zakończyć współpracę w dowolnym momencie. Jesteśmy pewni naszych usług i nie musimy nikogo "zamykać" w umowie.',
+      },
+      {
+        title: 'Czy automatyzacja wymaga zmian w moich obecnych systemach?',
+        description: 'W większości przypadków nie - łączymy się z Twoimi istniejącymi narzędziami przez API lub inne integracje. Nie musisz zmieniać systemu księgowego, ERP czy CRM. Automatyzacja "dokleja się" do tego co masz i sprawia, że działa efektywniej.',
+      },
+      {
+        title: 'Co jeśli nie mam pojęcia, co mogę zautomatyzować?',
+        description: 'To normalne! Podczas bezpłatnej konsultacji przeanalizujemy Twoje procesy biznesowe i wskażemy największe "bolączki", które warto zautomatyzować. Często klienci są zaskoczeni, jak wiele można uprościć. Doradzimy, od czego zacząć, żeby osiągnąć najszybszy zwrot z inwestycji.',
+      },
+      {
+        title: 'Czy obsługujecie małe firmy czy tylko duże korporacje?',
+        description: `Pracujemy z firmami każdej wielkości - od jednoosobowych działalności gospodarczych po średnie przedsiębiorstwa. Automatyzacja nie jest zarezerwowana dla korporacji - często to właśnie małe firmy zyskują najwięcej, bo każda zaoszczędzona godzina to dla nich duża wartość.`,
       },
     ]}
   />
@@ -125,17 +342,18 @@ const { cityData } = Astro.props;
   <!-- Call to Action -->
   <CallToAction
     title={`Gotowy na automatyzację w ${cityData['miasto-odmienione']}?`}
-    subtitle="Skontaktuj się z nami i dowiedz się, jak możemy pomóc Twojej firmie"
+    subtitle="Umów bezpłatną konsultację - przeanalizujemy Twoje procesy i wskażemy, co warto zautomatyzować w pierwszej kolejności. Bez zobowiązań, bez nachalnej sprzedaży."
     actions={[
       {
         variant: 'primary',
-        text: 'Skontaktuj się',
+        text: 'Umów konsultację',
         href: '/kontakt',
       },
       {
         variant: 'secondary',
-        text: 'Nasze usługi',
-        href: '/uslugi',
+        text: 'A może chcesz zwiększyć widoczność swojej oferty?',
+        href: 'https://uczciweseo.pl',
+        target: '_blank',
       },
     ]}
   />

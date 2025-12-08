@@ -1,0 +1,67 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<button
+  id="scroll-to-top"
+  aria-label="Scroll to top"
+  class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 bg-[#2b9e40] hover:bg-[#238a36] text-white rounded-full p-3 md:p-4 shadow-lg transition-all duration-300 opacity-0 invisible translate-y-4"
+>
+  <Icon name="tabler:arrow-up" class="w-5 h-5 md:w-6 md:h-6" />
+</button>
+
+<script>
+  function initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    if (!scrollToTopBtn) return;
+
+    // Show/hide button based on scroll position
+    function toggleButton() {
+      const scrolled = window.scrollY;
+
+      if (scrolled > 300) {
+        scrollToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+        scrollToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
+      } else {
+        scrollToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
+        scrollToTopBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
+      }
+    }
+
+    // Scroll to top functionality
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Event listeners
+    window.addEventListener('scroll', toggleButton);
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+
+    // Initial check
+    toggleButton();
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initScrollToTop);
+
+  // Re-initialize after view transitions (if enabled)
+  document.addEventListener('astro:after-swap', initScrollToTop);
+</script>
+
+<style>
+  #scroll-to-top {
+    backdrop-filter: blur(8px);
+  }
+
+  #scroll-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(43, 158, 64, 0.3);
+  }
+
+  #scroll-to-top:active {
+    transform: translateY(0);
+  }
+</style>

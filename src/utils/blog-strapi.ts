@@ -73,7 +73,7 @@ const convertStrapiArticleToPost = async (article: StrapiArticle): Promise<Post>
 
   // Calculate approximate reading time (assuming 200 words per minute)
   // Strip HTML tags for word count
-  const textContent = htmlContent.replace(/<[^>]*>/g, ' ');
+  const textContent = (htmlContent || '').replace(/<[^>]*>/g, ' ');
   const wordCount = textContent.split(/\s+/).filter(word => word.length > 0).length;
   const readingTime = Math.ceil(wordCount / 200);
 

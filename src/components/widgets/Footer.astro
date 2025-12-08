@@ -5,6 +5,7 @@ import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
 import logoLight from '~/assets/images/logo.svg';
 import logoDark from '~/assets/images/logo-negative.svg';
+import uczciweSEOLogo from '~/assets/images/uczciweSEO.svg';
 
 interface Link {
   text?: string;
@@ -78,7 +79,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
           <div class="col-span-6 md:col-span-3 lg:col-span-2">
             <div class="dark:text-gray-300 font-medium mb-2">{title}</div>
             {links && Array.isArray(links) && links.length > 0 && (
-              <ul class="text-sm">
+              <ul class="text-base">
                 {links.map(({ text, href, ariaLabel }) => (
                   <li class="mb-2">
                     <a
@@ -120,6 +121,33 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
 
       <div class="text-sm mr-4 dark:text-muted">
         <Fragment set:html={footNote} />
+      </div>
+    </div>
+
+    <!-- Sekcja UczciweSEO -->
+    <div class="border-t border-gray-200 dark:border-slate-800 py-8">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        <div class="text-center md:text-right">
+          <p class="text-base text-muted dark:text-gray-400">
+            Zwiększ też widoczność swojej oferty w Internecie
+          </p>
+        </div>
+        <a
+          href="https://uczciweseo.pl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block transition-transform duration-200 hover:scale-105"
+          aria-label="Odwiedź UczciweSEO.pl"
+        >
+          <Image
+            src={uczciweSEOLogo}
+            alt="UczciweSEO - Usługi SEO"
+            width={200}
+            height={60}
+            class="h-12 md:h-14 w-auto"
+            loading="lazy"
+          />
+        </a>
       </div>
     </div>
   </div>
