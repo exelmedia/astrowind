@@ -1,11 +1,13 @@
 ---
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
-import { blogTagRobots, getStaticPathsBlogTag } from '~/utils/blog-strapi';
+import { blogTagRobots, getStaticPathsBlogTag, getRandomPosts } from '~/utils/blog-strapi';
 
 import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
+import Grid from '~/components/blog/Grid.astro';
+import BlogCategoriesTags from '~/components/widgets/BlogCategoriesTags.astro';
 
 export const prerender = true;
 
@@ -26,6 +28,8 @@ const metadata = {
     follow: blogTagRobots?.follow,
   },
 };
+
+const randomPosts = await getRandomPosts({ count: 4 });
 ---
 
 <Layout metadata={metadata}>
@@ -33,5 +37,18 @@ const metadata = {
     <Headline>Tag: {tag.title}</Headline>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+
+    <!-- Wybrane artykuły -->
+    {randomPosts.length > 0 && (
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold mb-6">Wybrane artykuły</h2>
+        <Grid posts={randomPosts} />
+      </div>
+    )}
+
+    <!-- Kategorie i tagi -->
+    <div class="mt-8">
+      <BlogCategoriesTags />
+    </div>
   </section>
 </Layout>

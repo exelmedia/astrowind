@@ -280,6 +280,23 @@ export async function getAllTags() {
   return Object.values(tags);
 }
 
+/** Get random posts */
+export async function getRandomPosts({ count }: { count?: number }): Promise<Array<Post>> {
+  const _count = count || 4;
+  const posts = await fetchPosts();
+
+  if (!posts || posts.length === 0) return [];
+
+  // Shuffle array using Fisher-Yates algorithm
+  const shuffled = [...posts];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled.slice(0, _count);
+}
+
 /** */
 export async function getRelatedPosts(originalPost: Post, maxResults: number = 4): Promise<Post[]> {
   const allPosts = await fetchPosts();
