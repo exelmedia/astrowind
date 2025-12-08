@@ -28,13 +28,13 @@ const { post, url } = Astro.props;
     >
       <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
         <p>
-          <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+          {/* <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time> */}
           {
             post.author && (
               <>
-                {' '}
-                · <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+                {/* {' '}
+                · */} <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
                 <span class="inline-block">{post.author}</span>
               </>
             )
@@ -42,8 +42,7 @@ const { post, url } = Astro.props;
           {
             post.category && (
               <>
-                {' '}
-                ·{' '}
+                {post.author && <>{' '}·{' '}</>}
                 <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
                   {post.category.title}
                 </a>
@@ -53,7 +52,7 @@ const { post, url } = Astro.props;
           {
             post.readingTime && (
               <>
-                &nbsp;· <span>{post.readingTime}</span> {post.readingTime === 1 ? 'minuta' : post.readingTime < 5 ? 'minuty' : 'minut'} czytania
+                {(post.author || post.category) && <>&nbsp;·</>} <span>{post.readingTime}</span> {post.readingTime === 1 ? 'minuta' : post.readingTime < 5 ? 'minuty' : 'minut'} czytania
               </>
             )
           }

@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'Usługi',
-      href: getPermalink('/uslugi'),
+      href: getPermalink('/automatyzacja-procesow-biznesowych'),
     },
     {
       text: 'O nas',
@@ -140,7 +140,7 @@ export const footerData = {
     {
       title: 'Menu',
       links: [
-        { text: 'Usługi', href: getPermalink('/uslugi') },
+        { text: 'Usługi', href: getPermalink('/automatyzacja-procesow-biznesowych') },
         { text: 'O nas', href: getPermalink('/o-nas') },
         { text: 'Kontakt', href: getPermalink('/kontakt') },
         { text: 'Blog', href: getBlogPermalink() },
@@ -153,8 +153,8 @@ export const footerData = {
     { text: 'Polityka Prywatności', href: getPermalink('/polityka-prywatnosci') },
   ],
   socialLinks: [
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/uczciweit' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/uczciweit' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `

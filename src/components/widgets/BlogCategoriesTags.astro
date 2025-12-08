@@ -1,0 +1,52 @@
+---
+import { getAllCategories, getAllTags } from '~/utils/blog-strapi';
+import { getPermalink } from '~/utils/permalinks';
+import { Icon } from 'astro-icon/components';
+
+const categories = await getAllCategories();
+const tags = await getAllTags();
+---
+
+<aside class="bg-gray-50 dark:bg-slate-800 rounded-lg p-6 my-8">
+  <div class="space-y-6">
+    <!-- Kategorie -->
+    {categories.length > 0 && (
+      <div>
+        <h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+          <Icon name="tabler:folder" class="w-5 h-5 text-[#2b9e40]" />
+          <span>Kategorie</span>
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {categories.map((category) => (
+            <a
+              href={getPermalink(category.slug, 'category')}
+              class="inline-flex items-center px-3 py-1.5 bg-white dark:bg-slate-700 text-sm font-medium text-gray-700 dark:text-gray-300 rounded-full hover:bg-[#2b9e40] hover:text-white dark:hover:bg-[#2b9e40] transition-colors duration-200 border border-gray-200 dark:border-slate-600"
+            >
+              {category.title}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Tagi -->
+    {tags.length > 0 && (
+      <div>
+        <h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+          <Icon name="tabler:tags" class="w-5 h-5 text-[#0b74b5]" />
+          <span>Tagi</span>
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <a
+              href={getPermalink(tag.slug, 'tag')}
+              class="inline-flex items-center px-3 py-1.5 bg-white dark:bg-slate-700 text-sm font-medium text-gray-700 dark:text-gray-300 rounded-full hover:bg-[#0b74b5] hover:text-white dark:hover:bg-[#0b74b5] transition-colors duration-200 border border-gray-200 dark:border-slate-600"
+            >
+              #{tag.title}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</aside>

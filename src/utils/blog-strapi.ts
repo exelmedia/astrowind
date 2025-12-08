@@ -254,6 +254,32 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
   );
 };
 
+/** Get all unique categories from blog posts */
+export async function getAllCategories() {
+  const posts = await fetchPosts();
+  const categories = {};
+  posts.forEach((post) => {
+    if (post.category?.slug) {
+      categories[post.category.slug] = post.category;
+    }
+  });
+  return Object.values(categories);
+}
+
+/** Get all unique tags from blog posts */
+export async function getAllTags() {
+  const posts = await fetchPosts();
+  const tags = {};
+  posts.forEach((post) => {
+    if (Array.isArray(post.tags)) {
+      post.tags.forEach((tag) => {
+        tags[tag.slug] = tag;
+      });
+    }
+  });
+  return Object.values(tags);
+}
+
 /** */
 export async function getRelatedPosts(originalPost: Post, maxResults: number = 4): Promise<Post[]> {
   const allPosts = await fetchPosts();
